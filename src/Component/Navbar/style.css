@@ -1,0 +1,29 @@
+.navbar {
+    margin-top: 10px;
+}
+
+.navbar-nav-custom li {
+    margin-right: 30px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.form-search {
+    position: relative;
+}
+
+.form-search input {
+    background-color: #EDF1FA;
+    border-radius: 40px;
+    outline: none;
+    text-align: center;
+}
+
+
+.search-icon {
+    position: absolute;
+    color: #34364A;
+    opacity: 0.5;
+    top: 4px;
+    left: 5px;
+}

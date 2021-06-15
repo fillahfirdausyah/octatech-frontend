@@ -1,0 +1,50 @@
+.jumbo {
+  position: relative;
+  background-color: #f6f8fd;
+  width: 100%;
+  padding: 22px 0 20px 20px;
+  border-radius: 20px;
+  margin-bottom: 300px;
+}
+
+.jumbo .caption p {
+  color: #34364a;
+  font-weight: 300;
+}
+
+.btn-primary.fitur {
+  color: white !important;
+  margin-right: 35px;
+}
+
+.btn-primary:hover {
+  color: white;
+}
+
+.jumbo .slider {
+  position: absolute;
+  width: 550px;
+  right: 0;
+  top: 90px;
+}
+
+.jumbo .slider .slider-img img {
+  border-radius: 40px;
+  border-top-left-radius: 200px ;
+}
+
+.info {
+    position: absolute;
+    display: flex;
+    align-items: center ;
+    margin-top: 40px;
+    width: 50%;
+    height: 80px;
+    background-color: white;
+}
+
+.info1, .info2{
+    margin-right: 40px;
+}
+
+
