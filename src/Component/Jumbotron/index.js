@@ -1,4 +1,5 @@
 import React from "react";
+import CountUp from "react-countup";
 
 // Asset
 import "./style.css";
@@ -55,15 +56,15 @@ function Jumbotron() {
       </div>
       <div className="info">
         <div className="info1">
-          <h3>450+</h3>
+          <h3><CountUp end={450} duration={5} />+</h3>
           <p>Layanan terjuan</p>
         </div>
         <div className="info2">
-          <h3>122</h3>
+          <h3><CountUp end={122} duration={5} /></h3>
           <p>Klien Terpuaskan</p>
         </div>
         <div className="info3">
-          <h3>3</h3>
+          <h3><CountUp end={3} duration={5} /></h3>
           <p>Tahun Pengalaman</p>
         </div>
       </div>
