@@ -6,6 +6,7 @@ import Navbar from "../../Component/Navbar";
 import Jumbotron from "../../Component/Jumbotron";
 import Fitur from "../../Component/Fitur";
 import WhyUs from "../../Component/WhyUs";
+import Article from "../../Component/Article";
 
 function MainPage() {
   return (
@@ -18,6 +19,9 @@ function MainPage() {
       <div>
         <WhyUs />
       </div>
+      <Container>
+        <Article />
+      </Container>
     </>
   );
 }

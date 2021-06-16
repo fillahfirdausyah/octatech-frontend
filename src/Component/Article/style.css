@@ -1,0 +1,51 @@
+.article {
+    margin-top: 100px;
+}
+
+.article h1 {
+    font-weight: 700;
+}
+
+.content-left {
+    margin-top: 60px;
+}
+
+.content-left img {
+    width: 600px;
+    height: auto;
+}
+
+.content-left h2 {
+    margin-top: 40px;
+    font-weight: 800;
+}
+
+.content-left p {
+    margin-top: 38px;
+    font-weight: 300;
+    color: #5D5D64;
+}
+
+.content-right {
+    margin-top: 60px;
+    margin-left: 35px;
+}
+
+.content-right h2 {
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.content-right p {
+    margin-top: 12px;
+    font-weight: 300;
+    color: #5D5D64;
+}
+
+.content-right img {
+    width: 150px;
+    height: 80px;
+}
+
+.content-right .right-child {
+}
