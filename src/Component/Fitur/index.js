@@ -3,25 +3,39 @@ import React from "react";
 // Asset
 import "./style.css";
 import Banner from "../../Assets/fitur-banner.png";
+import FiturSection from "../../Assets/fitur-section.png";
+import Line2 from "../../Assets/Line-2.svg";
+import Fitur1 from '../../Assets/fitur-1.jpg'
+import Fitur2 from '../../Assets/fitur-2.jpg'
+import Fitur3 from '../../Assets/fitur-3.jpg'
+import Fitur4 from '../../Assets/fitur-4.jpg'
+import Fitur5 from '../../Assets/fitur-5.jpg'
 
 function Fitur() {
   return (
     <div className="fitur">
       <div className="row">
         <div className="col">
-          <img
-            src="https://dbkpop.com/wp-content/uploads/2020/06/weeekly_we_are_teaser_2_shin_Jiyoon.jpg"
-            className="img-fluid"
-            alt=""
-          />
+          <img src={FiturSection} className="img-fluid" alt="" />
         </div>
         <div className="col">
-          <h1>Pilihlah Fitur Modern Keinginanmu</h1>
-          <p>
-            Menemukan sistem lingkungan modern yang menghadirkan teknologi untuk
-            keamanan dan kenyamanan itu tidaklah mudah. Temukan solusi itu
-            bersama agen kami.
-          </p>
+          <div className="fitur-caption">
+            <img src={Line2} alt=""/>
+            <h1>Pilihlah Fitur Modern Keinginanmu</h1>
+            <p>
+              Menemukan sistem lingkungan modern yang menghadirkan teknologi
+              untuk keamanan dan kenyamanan itu tidaklah mudah. Temukan solusi
+              itu bersama agen kami.
+            </p>
+            <div className="list-fitur d-flex">
+              <img src={Fitur1} alt="" />
+              <img src={Fitur2} alt="" />
+              <img src={Fitur3} alt="" />
+              <img src={Fitur4} alt="" />
+              <img src={Fitur5} alt="" />
+            </div>
+            <a href="" className="btn btn-primary">Temukan Berbagai Fitur Pintar</a>
+          </div>
         </div>
       </div>
     </div>

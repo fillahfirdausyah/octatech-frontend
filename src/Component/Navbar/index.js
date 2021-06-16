@@ -14,8 +14,8 @@ function Navbar() {
             <img
               src={Logo}
               alt="otatech_logo"
-              width="90px"
-              height="70px"
+              width="110px"
+              height="90px"
               className="d-inline-block align-text-top"
             />
           </a>
