@@ -9,6 +9,7 @@ import WhyUs from "../../Component/WhyUs";
 import Article from "../../Component/Article";
 import CsSupport from "../../Component/CsSupport";
 import StartWith from "../../Component/StartWith";
+import Footer from "../../Component/Footer";
 
 function MainPage() {
   return (
@@ -27,6 +28,7 @@ function MainPage() {
       </Container>
       <div>
         <StartWith />
+        <Footer />
       </div>
     </>
   );
