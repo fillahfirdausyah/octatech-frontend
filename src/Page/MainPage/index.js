@@ -7,6 +7,8 @@ import Jumbotron from "../../Component/Jumbotron";
 import Fitur from "../../Component/Fitur";
 import WhyUs from "../../Component/WhyUs";
 import Article from "../../Component/Article";
+import CsSupport from "../../Component/CsSupport";
+import StartWith from "../../Component/StartWith";
 
 function MainPage() {
   return (
@@ -21,7 +23,11 @@ function MainPage() {
       </div>
       <Container>
         <Article />
+        <CsSupport />
       </Container>
+      <div>
+        <StartWith />
+      </div>
     </>
   );
 }
