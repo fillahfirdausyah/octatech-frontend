@@ -9,7 +9,7 @@ import Carousel from "react-bootstrap/Carousel";
 
 function Jumbotron() {
   return (
-    <div className="jumbo">
+    <div className="jumbo" data-aos="fade-down" data-aos-duration="2500">
       <div className="row ">
         <div className="col">
           <div className="caption">

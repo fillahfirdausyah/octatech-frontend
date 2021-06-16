@@ -13,7 +13,7 @@ import Fitur5 from '../../Assets/fitur-5.jpg'
 
 function Fitur() {
   return (
-    <div className="fitur">
+    <div className="fitur" data-aos="fade-down" data-aos-duration="2500">
       <div className="row">
         <div className="col">
           <img src={FiturSection} className="img-fluid" alt="" />
@@ -28,11 +28,11 @@ function Fitur() {
               itu bersama agen kami.
             </p>
             <div className="list-fitur d-flex">
-              <img src={Fitur1} alt="" />
-              <img src={Fitur2} alt="" />
-              <img src={Fitur3} alt="" />
-              <img src={Fitur4} alt="" />
-              <img src={Fitur5} alt="" />
+              {/* <img src={Fitur1} alt="" /> */}
+              {/* <img src={Fitur2} alt="" /> */}
+              {/* <img src={Fitur3} alt="" /> */}
+              {/* <img src={Fitur4} alt="" /> */}
+              {/* <img src={Fitur5} alt="" /> */}
             </div>
             <a href="" className="btn btn-primary">Temukan Berbagai Fitur Pintar</a>
           </div>

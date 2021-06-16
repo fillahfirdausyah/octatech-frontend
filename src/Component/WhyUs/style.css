@@ -4,6 +4,7 @@
   width: 100%;
   background-color: #f6f8fd;
   padding-top: 75px;
+  padding-bottom: 100px;
 }
 
 .dotted {
@@ -23,6 +24,15 @@
     right: 0px;
 }
 
+.d-3 {
+    right: 0px;
+    top: 650px;
+}
+
+.d-4 {
+    top: 650px;
+}
+
 .why-us-caption h6 {
   color: #22c59a;
 }
@@ -35,5 +45,35 @@
 .why-us-caption p {
     color: #5D5D64;
     margin-top: 23px;
+    font-weight: 300;
+}
+
+.unggulan {
+    margin-top: 60px;
+}
+
+.unggulan-card {
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 40px;
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-right: 50px;
+    padding-bottom: 100px;
+}
+
+.unggulan-card img {
+    width: 80px;
+    height: 80px;
+}
+
+.unggulan-card h5 {
+    margin-top: 45px;
+    font-weight: 700;
+}
+
+.unggulan-card p {
+    color: #5D5D64;
+    margin-top: 25px;
     font-weight: 300;
 }
