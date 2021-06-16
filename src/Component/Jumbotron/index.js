@@ -12,7 +12,7 @@ function Jumbotron() {
   return (
     <div className="jumbo" data-aos="fade-down" data-aos-duration="2500">
       <div className="row ">
-        <div className="col">
+        <div className="col-md-12 col-xl-6">
           <div className="caption">
             <h1>Ciptakan Lingkungan Modern Yang Nyaman, Aman dan Pintar</h1>
             <p>
@@ -27,7 +27,7 @@ function Jumbotron() {
             </a>
           </div>
         </div>
-        <div className="col">
+        <div className="col-md-12 col-xl-6">
           {/* <img src={Jumbo} className="img-fluid slider" alt="" /> */}
           <Carousel className="slider" nextLabel="" prevLabel="" fade>
             <Carousel.Item className="slider-img">
@@ -56,15 +56,21 @@ function Jumbotron() {
       </div>
       <div className="info">
         <div className="info1">
-          <h3><CountUp end={450} duration={5} />+</h3>
+          <h3>
+            <CountUp end={450} duration={5} />+
+          </h3>
           <p>Layanan terjuan</p>
         </div>
         <div className="info2">
-          <h3><CountUp end={122} duration={5} /></h3>
+          <h3>
+            <CountUp end={122} duration={5} />
+          </h3>
           <p>Klien Terpuaskan</p>
         </div>
         <div className="info3">
-          <h3><CountUp end={3} duration={5} /></h3>
+          <h3>
+            <CountUp end={3} duration={5} />
+          </h3>
           <p>Tahun Pengalaman</p>
         </div>
       </div>
