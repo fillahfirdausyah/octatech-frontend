@@ -50,7 +50,7 @@ function OurTeam() {
           </div>
           <div className="col-md-12 col-lg-6" data-aos="fade-up" data-aos-duration="400">
             <img src={Anna} alt="" />
-            <h1>Anna Carolina A. B.</h1>
+            <h1>Anna Caroline A. B.</h1>
             <p>Content Writer</p>
           </div>
         </div>
