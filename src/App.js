@@ -19,7 +19,7 @@ function App() {
         <Route path="/" exact>
           <MainPage />
         </Route>
-        <Route path="/about">
+        <Route path="/about" exact>
           <AboutPage />
         </Route>
       </Switch>

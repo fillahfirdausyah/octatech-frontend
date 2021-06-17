@@ -18,7 +18,7 @@ function StartWith() {
             pengalaman <br /> kami akan membantu Anda menciptakan lingkungan
             modern yang Anda inginkan.
           </p>
-          <a href="" className="btn btn-primary">
+          <a href="/" className="btn btn-primary">
             Temukan Berbagai Fitur Pintar
           </a>
         </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 // Asset
 import Logo from "../../Assets/Logo.svg";
@@ -15,7 +15,7 @@ function Navbar() {
     <div>
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-          <Link className="navbar-brand d-flex" to="/">
+          <NavLink exact className="navbar-brand d-flex" to="/">
             <img
               src={Logo}
               alt="otatech_logo"
@@ -23,7 +23,7 @@ function Navbar() {
               height="90px"
               className="d-inline-block align-text-top"
             />
-          </Link>
+          </NavLink>
           <button
             class="navbar-toggler collapsed"
             type="button"
@@ -42,24 +42,24 @@ function Navbar() {
           >
             <ul class="navbar-nav ms-auto navbar-nav-custom">
               <li class="nav-item">
-                <Link class="nav-link active" to="/">
+                <NavLink exact class="nav-link" to="/">
                   Beranda
-                </Link>
+                </NavLink>
               </li>
               <li class="nav-item">
-                <Link className="nav-link" to="/about">
+                <NavLink exact className="nav-link" to="/about">
                   Tentang
-                </Link>
+                </NavLink>
               </li>
               <li class="nav-item">
-                <Link className="nav-link" to="/team">
+                <NavLink exact className="nav-link" to="/team">
                   Tim
-                </Link>
+                </NavLink>
               </li>
               <li class="nav-item">
-                <Link className="nav-link" to="contact">
+                <NavLink exact className="nav-link" to="contact">
                   Kontak
-                </Link>
+                </NavLink>
               </li>
             </ul>
             <form>

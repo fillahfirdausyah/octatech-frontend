@@ -9,7 +9,6 @@ function VisiMisi() {
     <div className="visi-misi" data-aos="zoom-in" data-aos-duration="700">
       <Container>
         <div className="dotted d-1"></div>
-        <div className="dotted d-2"></div>
         <div className="row">
           <div className="col-sm-12 col-lg-6">
             <h1>VISI</h1>

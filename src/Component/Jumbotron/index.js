@@ -3,7 +3,6 @@ import CountUp from "react-countup";
 
 // Asset
 import "./style.css";
-import Jumbo from "../../Assets/jumbo.png";
 
 // Component
 import Carousel from "react-bootstrap/Carousel";
@@ -19,10 +18,10 @@ function Jumbotron() {
               Permudah hidup anda dengan lingkungan yang melimiki sistem modern.
               Jadikan lingkungan anda lebih pintar bersama kami.
             </p>
-            <a href="" className="btn btn-primary fitur">
+            <a href="/" className="btn btn-primary fitur">
               Temukan Berbagai Fitur Pintar
             </a>
-            <a href="" className="btn btn-secondary">
+            <a href="/" className="btn btn-secondary">
               Katalog
             </a>
           </div>

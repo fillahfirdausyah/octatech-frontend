@@ -4,11 +4,11 @@ import React from "react";
 import "./style.css";
 import FiturSection from "../../Assets/fitur-section.png";
 import Line2 from "../../Assets/Line-2.svg";
-import Fitur1 from '../../Assets/fitur-1.jpg'
-import Fitur2 from '../../Assets/fitur-2.jpg'
-import Fitur3 from '../../Assets/fitur-3.jpg'
-import Fitur4 from '../../Assets/fitur-4.jpg'
-import Fitur5 from '../../Assets/fitur-5.jpg'
+// import Fitur1 from '../../Assets/fitur-1.jpg'
+// import Fitur2 from '../../Assets/fitur-2.jpg'
+// import Fitur3 from '../../Assets/fitur-3.jpg'
+// import Fitur4 from '../../Assets/fitur-4.jpg'
+// import Fitur5 from '../../Assets/fitur-5.jpg'
 
 function Fitur() {
   return (
@@ -33,7 +33,7 @@ function Fitur() {
               <img src={Fitur4} alt="" />
               <img src={Fitur5} alt="" /> */}
             </div>
-            <a href="" className="btn btn-primary">Temukan Berbagai Fitur Pintar</a>
+            <a href="/" className="btn btn-primary">Temukan Berbagai Fitur Pintar</a>
           </div>
         </div>
       </div>
