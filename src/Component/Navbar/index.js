@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 // Asset
 import Logo from "../../Assets/Logo.svg";
@@ -6,16 +7,15 @@ import SearchIcon from "@material-ui/icons/Search";
 import "./style.css";
 
 function Navbar() {
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
-  const [isCollapsed, setIsCollapsed] = useState(true)
-
-  const handleNavCollapsed = () => setIsCollapsed(!isCollapsed)
+  const handleNavCollapsed = () => setIsCollapsed(!isCollapsed);
 
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-          <a class="navbar-brand d-flex " href="#">
+          <Link className="navbar-brand d-flex" to="/">
             <img
               src={Logo}
               alt="otatech_logo"
@@ -23,7 +23,7 @@ function Navbar() {
               height="90px"
               className="d-inline-block align-text-top"
             />
-          </a>
+          </Link>
           <button
             class="navbar-toggler collapsed"
             type="button"
@@ -36,27 +36,30 @@ function Navbar() {
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class={`${isCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarNav">
+          <div
+            class={`${isCollapsed ? "collapse" : ""} navbar-collapse`}
+            id="navbarNav"
+          >
             <ul class="navbar-nav ms-auto navbar-nav-custom">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
+                <Link class="nav-link active" to="/">
                   Beranda
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <Link className="nav-link" to="/about">
                   Tentang
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <Link className="nav-link" to="/team">
                   Tim
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <Link className="nav-link" to="contact">
                   Kontak
-                </a>
+                </Link>
               </li>
             </ul>
             <form>
