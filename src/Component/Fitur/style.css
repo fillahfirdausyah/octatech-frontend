@@ -21,6 +21,7 @@
 }
 
 @media (max-width: 575.98px) {
+
   .fitur-caption img.line2 {
     margin-top: 40px;
   }
@@ -41,7 +42,17 @@
 }
 
 @media (max-width: 991.98px) {
+  .fitur {
+    margin-top: 0 auto;
+  }
+
+  .fitur-caption img.line2 {
+    margin-top: 40px;
+  }
+
   .fitur img.lekung {
     margin-top: 400px;
+    width: 500px;
+    /* margin-left: 100px; */
   }
 }
