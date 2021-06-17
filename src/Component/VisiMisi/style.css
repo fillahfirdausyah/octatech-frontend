@@ -1,0 +1,16 @@
+.visi-misi {
+  position: relative;
+  margin-top: 70px;
+  width: 100%;
+  background-color: #f6f8fd;
+  padding-top: 75px;
+  padding-bottom: 100px;
+}
+
+.visi-misi h1 {
+    font-weight: 800;
+}
+
+.visi-misi p {
+    margin-top: 25px;
+}
