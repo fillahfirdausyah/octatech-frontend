@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 // Component
 import MainPage from "./Page/MainPage";
 import AboutPage from './Page/AboutPage'
+import TeamPage from "./Page/TeamPage";
 
 function App() {
   useEffect(() => {
@@ -19,8 +20,11 @@ function App() {
         <Route path="/" exact>
           <MainPage />
         </Route>
-        <Route path="/about" exact>
+        <Route path="/about">
           <AboutPage />
+        </Route>
+        <Route path="/team">
+          <TeamPage />
         </Route>
       </Switch>
     </div>

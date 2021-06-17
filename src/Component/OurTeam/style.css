@@ -1,0 +1,79 @@
+hr {
+  border: 1px solid black;
+}
+
+.d-o {
+  margin-top: 50px;
+  width: 100%;
+  height: 2000px;
+  z-index: -11;
+}
+
+.our-team {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.our-team h1 {
+  font-size: 60px;
+}
+
+.ceo {
+  margin-top: 66px;
+}
+
+.ceo img,
+.programmer img,
+.content-writer img,
+.video-creator img,
+.ui-ux img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  transition: 200ms linear;
+}
+
+.ceo h1,
+.programmer h1,
+.content-writer h1,
+.video-creator h1,
+.ui-ux h1 {
+  font-weight: 800;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.ceo p,
+.programmer p,
+.content-writer p,
+.video-creator p,
+.ui-ux p {
+  font-weight: 700;
+  font-size: 15px;
+  margin-top: 15px;
+}
+
+.programmer,
+.content-writer,
+.video-creator,
+.ui-ux {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.our-team img:hover {
+  -ms-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+@media (max-width: 991.98px) { 
+  .our-team img {
+    margin-top: 60px;
+  }
+}
