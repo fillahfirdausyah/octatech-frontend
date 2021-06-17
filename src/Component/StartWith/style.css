@@ -8,6 +8,10 @@
     padding-bottom: 90px;
 }
 
+.start-with-caption {
+    
+}
+
 .start-with h1 {
     font-weight: 800;
 }
@@ -26,4 +30,10 @@
 
 .start-with-img img {
     width: 250px;
+} 
+
+@media (max-width: 767.98px) { 
+    .start-with-img {
+        z-index: -1;
+    }
 }

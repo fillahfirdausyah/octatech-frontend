@@ -1,18 +1,34 @@
 .cs-support {
-    margin-top: 230px;
+  margin-top: 230px;
 }
 
 .cs-support h1 {
-    font-weight: 800;
+  font-weight: 800;
 }
 
 .cs-support p {
-    font-weight: 300;
-    margin-top: 34px;
-    color: #5D5D64;
+  font-weight: 300;
+  margin-top: 34px;
+  color: #5d5d64;
 }
 
 .cs-support a {
-    margin-top: 55px;
-    margin-right: 30px;
+  margin-top: 55px;
+  margin-right: 30px;
+}
+
+@media (max-width: 767.98px) {
+  .cs-support img {
+    margin-top: 15px;
+  }
+
+  .cs-support .btn {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .cs-support .btn {
+    margin-top: 10px;
+  }
 }

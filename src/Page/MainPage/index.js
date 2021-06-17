@@ -1,6 +1,9 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 
+// Asset
+import './style.css'
+
 // Component
 import Navbar from "../../Component/Navbar";
 import Jumbotron from "../../Component/Jumbotron";
@@ -14,7 +17,7 @@ import Footer from "../../Component/Footer";
 function MainPage() {
   return (
     <>
-      <Container>
+      <Container className="bungkus">
         <Navbar />
         <Jumbotron />
         <Fitur />

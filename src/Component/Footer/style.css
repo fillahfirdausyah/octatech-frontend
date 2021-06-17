@@ -3,7 +3,7 @@
     padding-top: 106px;
     color: white;
     padding-bottom: 106px;
-}
+} 
 
 .section1 img {
     width: 100px;
@@ -35,4 +35,17 @@ p.year {
     margin-top: 20px;
     font-weight: 200;
     font-size: small;
+}
+
+
+@media (max-width: 767.98px) { 
+
+    .octa-footer {
+        text-align: left;
+    }
+
+    .footer {
+        margin: 0 auto;
+        text-align: center;
+    }
 }

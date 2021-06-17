@@ -27,11 +27,11 @@ function Fitur() {
               itu bersama agen kami.
             </p>
             <div className="list-fitur">
-              <img src={Fitur1} alt="" />
+              {/* <img src={Fitur1} alt="" />
               <img src={Fitur2} alt="" />
               <img src={Fitur3} alt="" />
               <img src={Fitur4} alt="" />
-              <img src={Fitur5} alt="" />
+              <img src={Fitur5} alt="" /> */}
             </div>
             <a href="" className="btn btn-primary">Temukan Berbagai Fitur Pintar</a>
           </div>

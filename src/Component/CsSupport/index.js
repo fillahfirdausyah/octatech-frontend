@@ -6,7 +6,7 @@ import Support from "../../Assets/cs-support.svg";
 
 function CsSupport() {
   return (
-    <div className="cs-support">
+    <div className="cs-support"> 
       <div className="row">
         <div className="col-md-6">
           <h1>Friendly Support That Cares</h1>

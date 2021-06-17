@@ -10,7 +10,7 @@ import Article4 from "../../Assets/article-4.jpg";
 import Article5 from "../../Assets/fitur-5.jpg";
 
 function Article() {
-  return (
+  return ( 
     <div className="article">
       <h1>Artikel & Kiat Unggulan</h1>
       <div className="content">

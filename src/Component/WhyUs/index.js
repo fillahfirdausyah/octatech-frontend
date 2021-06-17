@@ -11,7 +11,7 @@ function WhyUs() {
   return (
     <div className="why-us">
       <Container>
-        <div className="dotted d-1"></div>
+        <div className="dotted d-1"></div> 
         <div className="dotted d-2"></div>
         <div className="dotted d-3"></div>
         <div className="dotted d-4"></div>
