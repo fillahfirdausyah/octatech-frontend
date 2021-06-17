@@ -1,0 +1,19 @@
+.what-we-do {
+    margin-top: 280px;
+}
+
+.what-we-do h1 {
+    font-weight: 800;
+}
+
+.what-we-do p {
+    margin-top: 25px;
+    font-weight: 300;
+    color: #5D5D64;
+}
+
+@media (max-width: 767.98px) {
+    .what-we-do {
+        margin-top: 180px;
+    }
+ }
