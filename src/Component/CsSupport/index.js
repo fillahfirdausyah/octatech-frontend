@@ -8,7 +8,7 @@ function CsSupport() {
   return (
     <div className="cs-support"> 
       <div className="row">
-        <div className="col-md-6">
+        <div className="col-md-6" data-aos="zoom-in" data-aos-duration="900">
           <h1>Friendly Support That Cares</h1>
           <p>
             Customer Service on-line 7x24 Jam. Jadi jangan khawatir, Anda
@@ -21,7 +21,7 @@ function CsSupport() {
             Lakukan Panggilan
           </a>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6" data-aos="zoom-in" data-aos-duration="900">
           <img src={Support} alt="" className="img-fluid" />
         </div>
       </div>

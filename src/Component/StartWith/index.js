@@ -8,7 +8,7 @@ import PersonScooter from "../../Assets/person-scooter.svg";
 function StartWith() {
   return (
     <div className="start-with">
-      <Container>
+      <Container data-aos="zoom-in" data-aos-duration="900">
         <div className="dotted d-1"></div>
         <div className="dotted d-2"></div>
         <div className="start-with-caption">

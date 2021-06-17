@@ -12,12 +12,12 @@ import Fitur5 from '../../Assets/fitur-5.jpg'
 
 function Fitur() {
   return (
-    <div className="fitur" data-aos="fade-down" data-aos-duration="2500"> 
+    <div className="fitur"> 
       <div className="row">
         <div className="col-md-12 col-xl-6">
           <img src={FiturSection} className="img-fluid lekung" alt="" />
         </div>
-        <div className="col-md-12 col-xl-6">
+        <div className="col-md-12 col-xl-6" data-aos="fade-up" data-aos-duration="1500">
           <div className="fitur-caption">
             <img src={Line2} alt="" className="line2"/>
             <h1>Pilihlah Fitur Modern Keinginanmu</h1>

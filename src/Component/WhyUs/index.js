@@ -3,9 +3,6 @@ import { Container } from "react-bootstrap";
 
 // Asset
 import "./style.css";
-import IconBerkas from "../../Assets/icon-berkas.svg";
-import IconChat from '../../Assets/icon-chat.svg'
-import IconCheck from '../../Assets/icon-check.svg'
 
 function WhyUs() {
   return (
@@ -23,8 +20,8 @@ function WhyUs() {
         <div className="unggulan">
           <div className="row">
             <div className="col-md-4 mt-4">
-              <div className="unggulan-card" data-aos="fade-down" data-aos-duration="1200">
-                <img src={IconBerkas} alt="" />
+              <div className="unggulan-card" data-aos="fade-up" data-aos-duration="700">
+                <img src="https://buildwithangga.com/themes/front/images/ic_studikasus.svg" alt="" />
                 <h5>Pilih Fiturmu</h5>
                 <p>
                   Temukan fitur apa yang Anda inginkan untuk lingkunganmu, dan
@@ -33,8 +30,8 @@ function WhyUs() {
               </div>
             </div>
             <div className="col-md-4 mt-4">
-              <div className="unggulan-card" data-aos="fade-down" data-aos-duration="2300">
-                <img src={IconChat} alt="" />
+              <div className="unggulan-card" data-aos="fade-up" data-aos-duration="1000">
+                <img src="https://buildwithangga.com/themes/front/images/ic_konsultasi.svg" alt="" />
                 <h5>Nomor Kontak</h5>
                 <p>
                   Temukan nomor kontak yang tertera di tipe fitur Anda dan
@@ -43,8 +40,8 @@ function WhyUs() {
               </div>
             </div>
             <div className="col-md-4 mt-4">
-              <div className="unggulan-card" data-aos="fade-down" data-aos-duration="3000">
-                <img src={IconCheck} alt="" />
+              <div className="unggulan-card" data-aos="fade-up" data-aos-duration="1300">
+                <img src="https://buildwithangga.com/themes/front/images/ic_sertifikat.svg" alt="" />
                 <h5>Pembayaran yang Mudah dan Aman</h5>
                 <p>
                   Siap mendapatkan properti Anda? Tandatangani kontrak dan fitur

@@ -10,13 +10,17 @@ import Article4 from "../../Assets/article-4.jpg";
 import Article5 from "../../Assets/fitur-5.jpg";
 
 function Article() {
-  return ( 
+  return (
     <div className="article">
       <h1>Artikel & Kiat Unggulan</h1>
       <div className="content">
         <div className="row">
           <div className="col">
-            <div className="content-left">
+            <div
+              className="content-left"
+              data-aos="fade-right"
+              data-aos-duration="500"
+            >
               <img src={Article1} alt="" />
               <h2>
                 Hallway Interior with Cabinet and Potted Plant near the door
@@ -32,7 +36,11 @@ function Article() {
           <div className="col">
             <div className="content-right">
               <div className="row">
-                <div className="right-child d-flex align-items-center">
+                <div
+                  className="right-child d-flex align-items-center"
+                  data-aos="fade-up"
+                  data-aos-duration="800"
+                >
                   <div className="right-child-title">
                     <h2>
                       3 interior design tips that make a rented space feel like
@@ -44,7 +52,11 @@ function Article() {
                 </div>
               </div>
               <div className="row">
-                <div className="right-child mt-5 d-flex align-items-center">
+                <div
+                  className="right-child mt-5 d-flex align-items-center"
+                  data-aos="fade-up"
+                  data-aos-duration="800"
+                >
                   <div className="right-child-title">
                     <h2>How to Protect Furniture While Renovating</h2>
                     <p>Ivan Dimitrijevic</p>
@@ -53,7 +65,11 @@ function Article() {
                 </div>
               </div>
               <div className="row">
-                <div className="right-child mt-5 d-flex align-items-center">
+                <div
+                  className="right-child mt-5 d-flex align-items-center"
+                  data-aos="fade-up"
+                  data-aos-duration="800"
+                >
                   <div className="right-child-title">
                     <h2>
                       Don’t Lose Your Marbles: How to Care for Your Marble
@@ -65,7 +81,11 @@ function Article() {
                 </div>
               </div>
               <div className="row">
-                <div className="right-child mt-5 d-flex align-items-center">
+                <div
+                  className="right-child mt-5 d-flex align-items-center"
+                  data-aos="fade-up"
+                  data-aos-duration="800"
+                >
                   <div className="right-child-title">
                     <h2>DEAR PEOPLE WHO LIVE IN FANCY TINY HOUSES</h2>
                     <p>Lauren Moudery</p>
@@ -74,7 +94,11 @@ function Article() {
                 </div>
               </div>
               <div className="row">
-                <div className="right-child mt-5 d-flex align-items-center">
+                <div
+                  className="right-child mt-5 d-flex align-items-center"
+                  data-aos="fade-up"
+                  data-aos-duration="800"
+                >
                   <div className="right-child-title">
                     <h2>
                       3 interior design tips that make a rented space feel like
