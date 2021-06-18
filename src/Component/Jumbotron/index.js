@@ -11,12 +11,12 @@ function Jumbotron() {
   return (
     <div className="jumbo" data-aos="fade-up" data-aos-duration="1500">
       <div className="row ">
-        <div className="col-md-12 col-xl-6">
+        <div className="col-md-12 col-xl-7">
           <div className="caption">
             <h1>Ciptakan Lingkungan Modern Yang Nyaman, Aman dan Pintar</h1>
             <p>
-              Permudah hidup anda dengan lingkungan yang melimiki sistem modern.
-              Jadikan lingkungan anda lebih pintar bersama kami.
+              Permudah hidup anda dengan lingkungan yang <br /> melimiki sistem
+              modern. Jadikan lingkungan anda <br /> lebih pintar bersama kami.
             </p>
             <a href="/" className="btn btn-primary fitur">
               Temukan Berbagai Fitur Pintar
@@ -26,7 +26,7 @@ function Jumbotron() {
             </a>
           </div>
         </div>
-        <div className="col-md-12 col-xl-6">
+        <div className="col-md-12 col-xl-5">
           {/* <img src={Jumbo} className="img-fluid slider" alt="" /> */}
           <Carousel className="slider" nextLabel="" prevLabel="" fade>
             <Carousel.Item className="slider-img">

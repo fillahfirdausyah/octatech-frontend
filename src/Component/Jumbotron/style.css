@@ -68,6 +68,7 @@
     text-align: center;
     position: none;
     margin-bottom: 100px;
+    padding-right: 20px;
   }
 
   .btn-primary.fitur {
@@ -97,7 +98,7 @@
 @media (max-width: 767.98px) {
   .jumbo .slider {
     width: 100%;
-    margin-top: 250px !important;
+    margin-top: 10px !important;
   }
 
   .jumbo .slider .slider-img img {
@@ -124,7 +125,7 @@
 
   .jumbo .slider {
     width: 100%;
-    margin-top: 190px;
+    margin-top: 10px;
   }
 
   .jumbo .slider .slider-img img {
@@ -134,7 +135,7 @@
 
   .info {
     width: 100%;
-    margin-top: 520px;
+    margin-top: 580px;
     margin-left: auto;
     margin-right: auto;
   }

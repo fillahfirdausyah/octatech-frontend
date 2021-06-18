@@ -9,14 +9,14 @@ import PhoneIcon from "@material-ui/icons/Phone";
 function ContactUs() {
   return (
     <div className="contact-us text-center">
-      <h1>Kontak Kami</h1>
+      <h1>KONTAK KAMI</h1>
       <div className="contact-info">
         <div className="row">
           <div className="col-md-12 col-lg-4">
             <div
               className="custom-card"
               data-aos="fade-up"
-              data-aos-duration="900"
+              data-aos-duration="1000"
             >
               <div className="contact-icon">
                 <RoomIcon fontSize="large" className="icon" />
@@ -29,7 +29,7 @@ function ContactUs() {
             <div
               className="custom-card"
               data-aos="fade-up"
-              data-aos-duration="900"
+              data-aos-duration="700"
             >
               <div className="contact-icon">
                 <EmailIcon fontSize="large" className="icon" />
@@ -42,7 +42,7 @@ function ContactUs() {
             <div
               className="custom-card"
               data-aos="fade-up"
-              data-aos-duration="900"
+              data-aos-duration="400"
             >
               <div className="contact-icon">
                 <PhoneIcon fontSize="large" className="icon" />
