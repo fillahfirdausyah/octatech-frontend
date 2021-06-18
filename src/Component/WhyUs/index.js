@@ -25,7 +25,7 @@ function WhyUs() {
                 <h5>Pilih Fiturmu</h5>
                 <p>
                   Temukan fitur apa yang Anda inginkan untuk lingkunganmu, dan
-                  pilih fitur dengan mudah.
+                  pilih fitur yang sesuai dan dengan mudah.
                 </p>
               </div>
             </div>

@@ -58,7 +58,7 @@ function Article() {
                   data-aos-duration="800"
                 >
                   <div className="right-child-title">
-                    <h2>How to Protect Furniture While Renovating</h2> 
+                    <h2>How to Protect Furniture While Renovating</h2>
                     <p>Ivan Dimitrijevic</p>
                   </div>
                   <img src={Article3} alt="" />
@@ -112,6 +112,11 @@ function Article() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="selengkapnya">
+        <a href="" className="btn btn-primary btn-selengkapnya">
+          Lihat Artikel Lainya
+        </a>
       </div>
     </div>
   );

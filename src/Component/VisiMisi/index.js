@@ -22,11 +22,13 @@ function VisiMisi() {
           <div className="col-sm-12 col-lg-6" data-aos="zoom-in" data-aos-duration="700">
             <h1>MISI</h1>
             <p>
-              Mengembangkan sebuah produk yang berkualitas tinggi dan
-              berinovasi. Menciptakan layanan profesional melalui mitra.
-              Memberikan kemitraan yang saling menguntungkan satu sama lain.
-              Inovasi, kreativitas terbaru dalam setiap produk. Menghasilkan
-              nilai tambah dan keuntungan bagi mitra.
+              <ol>
+                <li>Mengembangkan sebuah system yang berinovasi dan berkualitas tinggi.</li>
+                <li>Menciptakan layanan professional melalui mitra.</li>
+                <li>Memberikan kemitraan yang saling menguntungkan satu sama lain.</li>
+                <li>Inovasi dan kreatifisan terbaru dalam system</li>
+                <li>Menghasilkan nilai tambah dan keuntungan bagi mitra.</li>
+              </ol>
             </p>
           </div>
         </div>

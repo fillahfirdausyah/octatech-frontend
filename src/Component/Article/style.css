@@ -15,11 +15,13 @@
   height: auto;
 }
 
-.article img, .right-child-title {
+.article img,
+.right-child-title {
   transition: 300ms linear;
 }
 
-.article img:hover, .right-child-title:hover {
+.article img:hover,
+.right-child-title:hover {
   -ms-transform: scale(1.1);
   -moz-transform: scale(1.1);
   -webkit-transform: scale(1.1);
@@ -61,6 +63,17 @@
 }
 
 .content-right .right-child {
+}
+
+.article .selengkapnya {
+  margin-top: 90px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.btn-selengkapnya {
+  width: 100%;
 }
 
 @media (max-width: 575.98px) {
