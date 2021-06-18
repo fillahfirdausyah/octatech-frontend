@@ -89,7 +89,8 @@
     margin-right: 0px !important;
   }
 
-  .info2, .info3 {
+  .info2,
+  .info3 {
     margin-top: 50px !important;
   }
 }
@@ -98,7 +99,7 @@
 @media (max-width: 767.98px) {
   .jumbo .slider {
     width: 100%;
-    margin-top: 10px !important;
+    margin-top: 40px !important;
   }
 
   .jumbo .slider .slider-img img {
@@ -124,8 +125,9 @@
   }
 
   .jumbo .slider {
-    width: 100%;
-    margin-top: 10px;
+    width: 100% !important;
+    margin-top: 40px;
+    top: 0px !important;
   }
 
   .jumbo .slider .slider-img img {
@@ -143,5 +145,12 @@
   .info1,
   .info2 {
     margin-right: 120px;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .jumbo .slider {
+    width: 53%;
+    top: -100px;
   }
 }
