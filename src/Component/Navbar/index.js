@@ -52,6 +52,11 @@ function Navbar() {
                 </NavLink>
               </li>
               <li class="nav-item">
+                <NavLink exact class="nav-link" to="/gallery">
+                  Gallery
+                </NavLink>
+              </li>
+              <li class="nav-item">
                 <NavLink exact className="nav-link" to="/team">
                   Tim
                 </NavLink>
