@@ -21,4 +21,8 @@
         margin-top: 10px;
         height: 600px;
     }
+
+    .about-us p {
+        margin-top: 50px;
+    }
 }

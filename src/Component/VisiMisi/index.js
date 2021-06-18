@@ -6,11 +6,11 @@ import "./style.css";
 
 function VisiMisi() {
   return (
-    <div className="visi-misi" data-aos="zoom-in" data-aos-duration="700">
+    <div className="visi-misi">
       <Container>
         <div className="dotted d-1"></div>
         <div className="row">
-          <div className="col-sm-12 col-lg-6">
+          <div className="col-sm-12 col-lg-6" data-aos="zoom-in" data-aos-duration="700">
             <h1>VISI</h1>
             <p>
               Mewujudkan perusahaan yang profesional, dan terpercaya dalam
@@ -19,7 +19,7 @@ function VisiMisi() {
               berbagai wilayah Indonesia.
             </p>
           </div>
-          <div className="col-sm-12 col-lg-6">
+          <div className="col-sm-12 col-lg-6" data-aos="zoom-in" data-aos-duration="700">
             <h1>MISI</h1>
             <p>
               Mengembangkan sebuah produk yang berkualitas tinggi dan
