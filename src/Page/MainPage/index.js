@@ -17,7 +17,7 @@ import Footer from "../../Component/Footer";
 function MainPage() {
   return (
     <>
-      <Container className="bungkus">
+      <Container>
         <Navbar />
         <Jumbotron />
         <Fitur />

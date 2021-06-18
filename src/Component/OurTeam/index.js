@@ -2,10 +2,12 @@ import React from "react";
 
 // Asset
 import "./style.css";
+
+// Profile Picture
 import Fajar from "../../Assets/profile/fajar.JPG";
 import Fill from "../../Assets/profile/fill.jpg";
 import Aqsal from "../../Assets/profile/aqsal.jpeg";
-import Nando from "../../Assets/profile/nando.png";
+import Nando from "../../Assets/profile/nando.jpg";
 import Syaffa from "../../Assets/profile/syaffa.JPG";
 import Anna from '../../Assets/profile/anna.jpeg'
 import Sam from "../../Assets/profile/sam2.jpg";

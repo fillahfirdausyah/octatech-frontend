@@ -1,11 +1,12 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import { NavLink } from "react-bootstrap";
 
 // Asset
 import "./style.css";
 import Logo from "../../Assets/Logo.svg";
 
-function Footer() { 
+function Footer() {
   return (
     <div className="footer">
       <Container>

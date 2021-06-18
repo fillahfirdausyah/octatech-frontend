@@ -5,8 +5,9 @@ import "aos/dist/aos.css";
 
 // Component
 import MainPage from "./Page/MainPage";
-import AboutPage from './Page/AboutPage'
+import AboutPage from "./Page/AboutPage";
 import TeamPage from "./Page/TeamPage";
+import ContactPage from "./Page/ContactPage";
 
 function App() {
   useEffect(() => {
@@ -25,6 +26,9 @@ function App() {
         </Route>
         <Route path="/team">
           <TeamPage />
+        </Route>
+        <Route path="/contact">
+          <ContactPage />
         </Route>
       </Switch>
     </div>

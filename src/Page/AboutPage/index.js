@@ -12,6 +12,7 @@ import Footer from "../../Component/Footer";
 function AboutPage() {
   return (
     <>
+      <div className="dotted d-o"></div>
       <Container>
         <Navbar />
         <AboutUs />
