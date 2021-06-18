@@ -11,6 +11,7 @@ import ContactPage from "./Page/ContactPage";
 import AdminPage from "./Page/AdminPage";
 import ArticlePage from "./Page/ArticlePage";
 import InboxPage from "./Page/InboxPage";
+import GalleryPage from "./Page/GalleryPage";
 
 function App() {
   useEffect(() => {
@@ -41,6 +42,9 @@ function App() {
         </Route>
         <Route path="/admin/inbox">
           <InboxPage />
+        </Route>
+        <Route path="/gallery">
+          <GalleryPage />
         </Route>
       </Switch>
     </div>

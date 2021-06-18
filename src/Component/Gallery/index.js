@@ -6,6 +6,7 @@ import "./style.css";
 function Gallery() {
   return (
     <div className="gallery">
+      <h1>Our Gallery</h1>
       <div class="row">
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
           <img
