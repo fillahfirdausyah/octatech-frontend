@@ -1,13 +1,27 @@
 .gallery {
-    margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.gallery h1 {
+  margin-top: 40px;
+  margin-bottom: 60px;
 }
 
 .gallery img {
-    border-radius: 9px !important;
+  border-radius: 9px !important;
+  transition: 400ms linear !important;
+}
+
+.gallery img:hover {
+  -ms-transform: scale(1.1) !important;
+  -moz-transform: scale(1.1) !important;
+  -webkit-transform: scale(1.1) !important;
+  -o-transform: scale(1.1) !important;
+  transform: scale(1.1) !important;
 }
 
 @media (max-width: 767.98px) {
-    .gallery {
-        margin-top: 60px;
-    }
+  .gallery {
+    margin-top: 60px;
+  }
 }
