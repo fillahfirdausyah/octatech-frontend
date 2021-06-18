@@ -8,7 +8,7 @@ import Logo from "../../Assets/Logo.svg";
 
 function Footer() {
   return (
-    <div className="footer">
+    <div className="footer octa">
       <Container>
         <div className="row">
           <div className="col-md-3 octa-footer">

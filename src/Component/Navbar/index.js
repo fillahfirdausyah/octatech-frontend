@@ -13,7 +13,7 @@ function Navbar() {
 
   return (
     <div>
-      <nav class="navbar navbar-expand-lg navbar-light">
+      <nav class="navbar navbar-expand-lg navbar-light nav-octa">
         <div class="container-fluid">
           <NavLink exact className="navbar-brand d-flex" to="/">
             <img

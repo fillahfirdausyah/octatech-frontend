@@ -19,11 +19,14 @@
     text-align: center;
 }
 
-
 .search-icon {
     position: absolute;
     color: #34364A;
     opacity: 0.5;
     top: 4px;
     left: 5px;
+}
+
+nav.nav-octa {
+    box-shadow: none;
 }

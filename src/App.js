@@ -8,6 +8,9 @@ import MainPage from "./Page/MainPage";
 import AboutPage from "./Page/AboutPage";
 import TeamPage from "./Page/TeamPage";
 import ContactPage from "./Page/ContactPage";
+import AdminPage from "./Page/AdminPage";
+import ArticlePage from "./Page/ArticlePage";
+import InboxPage from "./Page/InboxPage";
 
 function App() {
   useEffect(() => {
@@ -29,6 +32,15 @@ function App() {
         </Route>
         <Route path="/contact">
           <ContactPage />
+        </Route>
+        <Route path="/admin" exact>
+          <AdminPage />
+        </Route>
+        <Route path="/admin/artikel">
+          <ArticlePage />
+        </Route>
+        <Route path="/admin/inbox">
+          <InboxPage />
         </Route>
       </Switch>
     </div>
