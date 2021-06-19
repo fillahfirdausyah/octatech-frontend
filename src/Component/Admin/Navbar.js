@@ -1,8 +1,20 @@
-import React from "react";
+import React, {useContext} from "react";
+import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../Helpers/AuthContext";
 
-import NotificationsIcon from '@material-ui/icons/Notifications';
+import NotificationsIcon from "@material-ui/icons/Notifications";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
 function Navbar() {
+
+  const {setIsAuth} = useContext(AuthContext)
+  
+  const signOutHandler = (e) => {
+    e.preventDefault();
+    localStorage.removeItem('token')
+    setIsAuth(false)
+  };
+
   return (
     <nav class="navbar navbar-expand navbar-light bg-white topbar mt-0 mb-4 static-top shadow">
       <button
@@ -106,6 +118,20 @@ function Navbar() {
               Show All Alerts
             </a>
           </div>
+        </li>
+
+        <li class="nav-item dropdown no-arrow mx-1">
+          <a
+            class="nav-link dropdown-toggle"
+            id="alertsDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            onClick={signOutHandler}
+          >
+            <ExitToAppIcon style={{ color: "red" }} />
+          </a>
         </li>
 
         <div class="topbar-divider d-none d-sm-block"></div>

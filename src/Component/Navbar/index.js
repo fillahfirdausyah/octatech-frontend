@@ -62,8 +62,13 @@ function Navbar() {
                 </NavLink>
               </li>
               <li class="nav-item">
-                <NavLink exact className="nav-link" to="contact">
+                <NavLink exact className="nav-link" to="/contact">
                   Kontak
+                </NavLink>
+              </li>
+              <li class="nav-item">
+                <NavLink exact className="nav-link" to="/login">
+                  Login
                 </NavLink>
               </li>
             </ul>
