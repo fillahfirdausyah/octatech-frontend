@@ -40,7 +40,7 @@ function Login(props) {
           localStorage.setItem("token", res.data.token);
           setIsAuth(true)
 
-          history.push('/admin')
+          history.replace('/admin')
         }
       })
       .catch((err) => console.log(err));

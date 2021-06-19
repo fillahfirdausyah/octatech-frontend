@@ -1,5 +1,8 @@
 import React from "react";
 
+// Asset
+import './style.css'
+
 // Component
 import Sidebar from "../../Component/Admin/Sidebar";
 import Navbar from "../../Component/Admin/Navbar";

@@ -39,7 +39,7 @@ function App() {
           <Route path="/" exact>
             <MainPage />
           </Route>
-          <Route path="/product" exact>
+          <Route path="/product">
             <ProductPage />
           </Route>
           <Route path="/about">
@@ -51,16 +51,10 @@ function App() {
           <Route path="/contact">
             <ContactPage />
           </Route>
-          <ProtectedRoute
-            isAuth={isAuth}
-            path="/admin"
-            component={AdminPage}
-            exact
-          />
-          <Route path="/admin/artikel" exact>
+          <Route path="/artikel">
             {isAuth ? <ArticlePage /> : <Redirect to="/login" />}
           </Route>
-          <Route path="/admin/inbox" exact>
+          <Route path="/inbox">
             {isAuth ? <InboxPage /> : <Redirect to="/login" />}
           </Route>
           <Route path="/gallery">
@@ -73,6 +67,12 @@ function App() {
               <LoginPage message="Silahkan Login Terlebih Dahulu" />
             )}
           </Route>
+          <ProtectedRoute
+            isAuth={isAuth}
+            path="/admin"
+            component={AdminPage}
+            exact
+          />
         </Switch>
       </AuthContext.Provider>
     </div>

@@ -33,7 +33,7 @@ function Sidebar() {
       <div class="sidebar-heading">Pesan</div>
 
       <li class="nav-item">
-        <NavLink className="nav-link" to="/admin/inbox">
+        <NavLink className="nav-link" to="/inbox">
           <DraftsIcon className="mx-2" />
           <span>Kotak Masuk</span>
         </NavLink>
@@ -44,7 +44,7 @@ function Sidebar() {
       <div class="sidebar-heading">Content</div>
 
       <li class="nav-item">
-        <NavLink className="nav-link" to="/admin/artikel">
+        <NavLink className="nav-link" to="/artikel">
           <LibraryBooksIcon className="mx-2" />
           <span>Artikel</span>
         </NavLink>
