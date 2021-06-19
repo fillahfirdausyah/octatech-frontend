@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 
 // Component
 import MainPage from "./Page/MainPage";
+import ProductPage from "./Page/ProductPage";
 import AboutPage from "./Page/AboutPage";
 import TeamPage from "./Page/TeamPage";
 import ContactPage from "./Page/ContactPage";
@@ -37,6 +38,9 @@ function App() {
         <Switch>
           <Route path="/" exact>
             <MainPage />
+          </Route>
+          <Route path="/product" exact>
+            <ProductPage />
           </Route>
           <Route path="/about">
             <AboutPage />

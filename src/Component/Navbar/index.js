@@ -47,6 +47,11 @@ function Navbar() {
                 </NavLink>
               </li>
               <li class="nav-item">
+                <NavLink exact className="nav-link" to="/product">
+                  Produk
+                </NavLink>
+              </li>
+              <li class="nav-item">
                 <NavLink exact className="nav-link" to="/about">
                   Tentang
                 </NavLink>
@@ -64,11 +69,6 @@ function Navbar() {
               <li class="nav-item">
                 <NavLink exact className="nav-link" to="/contact">
                   Kontak
-                </NavLink>
-              </li>
-              <li class="nav-item">
-                <NavLink exact className="nav-link" to="/login">
-                  Login
                 </NavLink>
               </li>
             </ul>

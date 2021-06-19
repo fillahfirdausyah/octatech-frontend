@@ -1,0 +1,94 @@
+.product {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.browse-product {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.browse-product h1 {
+  font-size: 25px;
+}
+
+.card-product {
+  margin-top: 20px;
+  background-color: #f6f8fd;
+  border-radius: 20px;
+  padding: 20px 20px;
+  box-shadow: 2px 4px 13px -5px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 4px 13px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 4px 13px -5px rgba(0, 0, 0, 0.75);
+}
+
+.card-product img.icon-product {
+  width: 100px;
+  height: 90px;
+}
+
+.card-product h4 {
+  font-size: 25px;
+  margin-top: 30px;
+}
+
+.card-product p {
+  margin-top: 20px;
+  font-weight: 300;
+  color: #5d5d64;
+}
+
+.top-product {
+  text-align: left;
+  margin-top: 140px;
+  margin-bottom: 200px;
+}
+
+.card-product img.thub-product {
+  width: 200px;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.card-product.the-product {
+    padding: 30px 25px;
+    box-shadow: none;
+}
+
+.card-product.the-product h2 {
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+.card-product.the-product p {
+    margin-top: 8px;
+}
+
+.rating {
+    margin-top: 15px;
+    color: #F4A42B;
+}
+
+.card-product.the-product hr {
+    border: none;
+    height: 2px;
+    color: black;
+}
+
+.rating .cap {
+    color: black;
+}
+
+.rating .cap .icon {
+    color: #22C58B;
+}
+
+.rating h5 {
+    text-align: center;
+    margin-top: -16px;
+    font-size: 13px;
+}
+
+.top-product button {
+    margin-top: 40px;
+}
