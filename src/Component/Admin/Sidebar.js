@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import DraftsIcon from "@material-ui/icons/Drafts";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
+import LocalMallIcon from '@material-ui/icons/LocalMall';
 
 function Sidebar() {
   return (
@@ -47,6 +48,12 @@ function Sidebar() {
         <NavLink className="nav-link" to="/artikel">
           <LibraryBooksIcon className="mx-2" />
           <span>Artikel</span>
+        </NavLink>
+      </li>
+      <li class="nav-item">
+        <NavLink className="nav-link" to="/products">
+          <LocalMallIcon className="mx-2" />
+          <span>Product</span>
         </NavLink>
       </li>
 

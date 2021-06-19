@@ -14,6 +14,7 @@ import ArticlePage from "./Page/ArticlePage";
 import InboxPage from "./Page/InboxPage";
 import GalleryPage from "./Page/GalleryPage";
 import LoginPage from "./Page/LoginPage";
+import AdminProductPage from "./Page/AdminProductPage";
 
 import ProtectedRoute from "./Component/ProtectedRoute";
 import { AuthContext } from "./Helpers/AuthContext";
@@ -39,7 +40,7 @@ function App() {
           <Route path="/" exact>
             <MainPage />
           </Route>
-          <Route path="/product">
+          <Route path="/product" exact>
             <ProductPage />
           </Route>
           <Route path="/about">
@@ -56,6 +57,9 @@ function App() {
           </Route>
           <Route path="/inbox">
             {isAuth ? <InboxPage /> : <Redirect to="/login" />}
+          </Route>
+          <Route path="/products">
+            {isAuth ? <AdminProductPage /> : <Redirect to="/login" />}
           </Route>
           <Route path="/gallery">
             <GalleryPage />

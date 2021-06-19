@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Modal, Button } from "react-bootstrap";
+import Moment from "react-moment";
 import axios from "axios";
 
 // Component
@@ -33,10 +34,10 @@ function Inbox() {
     axios.get(`http://localhost:8000/pesan/details/${id}`).then((res) => {
       setPesan(res.data.data);
     });
-    setShowModal(true)
+    setShowModal(true);
   };
 
-  const closehandler = () => setShowModal(false)
+  const closehandler = () => setShowModal(false);
   return (
     <>
       <Modal
@@ -44,24 +45,28 @@ function Inbox() {
         onHide={closehandler}
         backdrop="static"
         keyboard={false}
+        className="pesan-modal"
       >
         <Modal.Header closeButton>
           <Modal.Title>Detail Pesan</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-         <h6 className="mb-4">{pesan.name}</h6>
-         <span>{pesan.createdAt}</span>
-         <p>
-           {
-             pesan.pesan
-           }
-         </p>
+          <div className="row">
+            <div className="col">
+              <h5>{pesan.name}</h5>
+            </div>
+            <div className="col">
+              <p className="pesan-waktu">
+                <Moment fromNow>{pesan.createdAt}</Moment>
+              </p>
+            </div>
+          </div>
+          <p className="mt-4">{pesan.pesan}</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={closehandler}>
             Close
           </Button>
-          <Button variant="primary">Understood</Button>
         </Modal.Footer>
       </Modal>
 

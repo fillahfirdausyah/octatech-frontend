@@ -1,7 +1,18 @@
-.btn-action {
+.btn.btn-action {
     width: 40px !important;
     height: 40px;
     border-radius: 50% !important;
+    /* border-radius: 90px !important; */
+}
+
+.pesan-modal h5 {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.pesan-modal p.pesan-waktu {
+    font-weight: 300;
+    color: gray;
 }
 
 .action-icon {
