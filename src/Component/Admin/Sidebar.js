@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import DraftsIcon from "@material-ui/icons/Drafts";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
-import LocalMallIcon from '@material-ui/icons/LocalMall';
+import LocalMallIcon from "@material-ui/icons/LocalMall";
 
 function Sidebar() {
   return (
@@ -13,7 +13,10 @@ function Sidebar() {
       class="navbar-nav bg-primary sidebar sidebar-dark accordion"
       id="accordionSidebar"
     >
-      <NavLink className="sidebar-brand d-flex align-items-center justify-content-center" to="/admin">
+      <NavLink
+        className="sidebar-brand d-flex align-items-center justify-content-center"
+        to="/admin"
+      >
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink" />
         </div>
@@ -45,18 +48,18 @@ function Sidebar() {
       <div class="sidebar-heading">Content</div>
 
       <li class="nav-item">
-        <NavLink className="nav-link" to="/artikel">
-          <LibraryBooksIcon className="mx-2" />
-          <span>Artikel</span>
-        </NavLink>
-      </li>
-      <li class="nav-item">
         <NavLink className="nav-link" to="/products">
           <LocalMallIcon className="mx-2" />
           <span>Product</span>
         </NavLink>
       </li>
 
+      <li class="nav-item">
+        <NavLink className="nav-link" to="/artikel">
+          <LibraryBooksIcon className="mx-2" />
+          <span>Artikel</span>
+        </NavLink>
+      </li>
       <hr class="sidebar-divider" />
     </ul>
   );
