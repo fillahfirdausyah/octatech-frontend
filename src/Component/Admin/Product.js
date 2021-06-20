@@ -8,7 +8,6 @@ import VisibilityIcon from "@material-ui/icons/Visibility";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import EditIcon from "@material-ui/icons/Edit";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
-import { ID } from "postcss-selector-parser";
 
 function Product() {
   const [product, setProduct] = useState([]);
@@ -23,11 +22,23 @@ function Product() {
   const [showModalDetails, setShowModalDetails] = useState(false);
   const [showToats, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
-  const [gambar, setgambar] = useState("");
   const [fetchData, setFetchData] = useState(false);
 
-  const namaProductRef = useRef();
-  const hargaProductRef = useRef();
+  const [id, setId] = useState(0);
+  const [namaProduct, setNamaProduct] = useState("");
+  const namaProductHandler = (e) => {
+    setNamaProduct(e.target.value);
+  };
+
+  const [hargaProduct, setHargaProduct] = useState(0);
+  const hargaProductHandler = (e) => {
+    setHargaProduct(e.target.value);
+  };
+
+  const [gambar, setgambar] = useState("");
+  const gambarHanlder = (e) => {
+    setgambar(e.target.files[0]);
+  };
 
   useEffect(() => {
     axios.get("http://localhost:8000/product/all").then((res) => {
@@ -39,9 +50,10 @@ function Product() {
   const closehandler = () => setShowModalForm(false);
   const handleModalFormUpdate = (id) => {
     axios.get(`http://localhost:8000/product/details/${id}`).then((res) => {
-      setDetailsProduct(res.data);
+      setId(res.data.data.id);
+      setNamaProduct(res.data.data.nama);
+      setHargaProduct(res.data.data.harga);
     });
-    console.log(detailsProduct);
     setShowModalFormUpdate(true);
   };
   const closehandlerFormUpdate = () => setShowModalFormUpdate(false);
@@ -53,34 +65,49 @@ function Product() {
   };
   const closeModalDetailsHandler = () => setShowModalDetails(false);
 
-  const gambarHanlder = (e) => {
-    setgambar(e.target.files[0]);
-  };
-
   const formProductHandler = (e) => {
     e.preventDefault();
 
-    const nama = namaProductRef.current.value;
-    const harga = hargaProductRef.current.value;
-
     let productData = new FormData();
     productData.append("gambar", gambar);
-    productData.append("nama", nama);
-    productData.append("harga", harga);
+    productData.append("nama", namaProduct);
+    productData.append("harga", hargaProduct);
 
     axios
       .post("http://localhost:8000/product/add", productData)
       .then((res) => {
         setShowModalForm(false);
+        setFetchData(true);
         setToastMessage(res.data.message);
         setShowToast(true);
-        setFetchData(true);
       })
       .catch((err) => {
         console.log(err);
       });
 
     e.target.reset();
+    setFetchData(false);
+  };
+
+  const updateProductHandler = (e) => {
+    e.preventDefault();
+
+    let productData = new FormData();
+    productData.append("gambar", gambar);
+    productData.append("nama", namaProduct);
+    productData.append("harga", hargaProduct);
+
+    axios
+      .put(`http://localhost:8000/product/update/${id}`, productData)
+      .then((res) => {
+        setShowModalFormUpdate(false);
+        setFetchData(true);
+        setToastMessage(res.data.message);
+        setShowToast(true);
+      });
+
+    e.target.reset();
+    setFetchData(false);
   };
 
   const deleteHandler = (e, id) => {
@@ -88,9 +115,11 @@ function Product() {
 
     axios.delete(`http://localhost:8000/product/delete/${id}`).then((res) => {
       setToastMessage(res.data.message);
-      setShowToast(true);
       setFetchData(true);
+      setShowToast(true);
     });
+
+    setFetchData(false);
   };
 
   return (
@@ -120,7 +149,7 @@ function Product() {
                     class="form-control"
                     id="nama"
                     placeholder="Nama"
-                    ref={namaProductRef}
+                    onChange={namaProductHandler}
                   />
                 </div>
               </div>
@@ -134,7 +163,7 @@ function Product() {
                     class="form-control"
                     id="harga"
                     placeholder="Rp..."
-                    ref={hargaProductRef}
+                    onChange={hargaProductHandler}
                   />
                 </div>
               </div>
@@ -179,7 +208,9 @@ function Product() {
           <Modal.Title>Update Product</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form>
+          <form
+            onSubmit={(e) => updateProductHandler(e, detailsProduct.data.id)}
+          >
             <div className="row">
               <div className="col-6">
                 <div class="mb-4">
@@ -191,7 +222,8 @@ function Product() {
                     class="form-control"
                     id="nama"
                     placeholder="Nama"
-                    value={detailsProduct.data.nama}
+                    value={namaProduct}
+                    onChange={namaProductHandler}
                   />
                 </div>
               </div>
@@ -205,7 +237,8 @@ function Product() {
                     class="form-control"
                     id="harga"
                     placeholder="Rp..."
-                    value={detailsProduct.data.harga}
+                    value={hargaProduct}
+                    onChange={hargaProductHandler}
                   />
                 </div>
               </div>
@@ -219,12 +252,13 @@ function Product() {
                     class="form-control"
                     id="nama"
                     placeholder="Nama"
+                    onChange={gambarHanlder}
                   />
                 </div>
               </div>
             </div>
             <button className="btn btn-primary w-100 mb-2">
-              Tambahkan Product
+              Update Product
             </button>
           </form>
         </Modal.Body>
