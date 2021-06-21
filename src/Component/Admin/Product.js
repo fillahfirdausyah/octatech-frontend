@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import CurrencyFormat from "react-currency-format";
 import { Modal, Button, Toast } from "react-bootstrap";
-import axios from "axios";
+import api from '../../Helpers/api-endpoint'
 
 // Component
 import VisibilityIcon from "@material-ui/icons/Visibility";
@@ -41,7 +41,7 @@ function Product() {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:8000/product/all").then((res) => {
+    api.get("/product/all").then((res) => {
       setProduct(res.data.data);
     });
   }, [fetchData]);
@@ -49,7 +49,7 @@ function Product() {
   const handleModalForm = () => setShowModalForm(true);
   const closehandler = () => setShowModalForm(false);
   const handleModalFormUpdate = (id) => {
-    axios.get(`http://localhost:8000/product/details/${id}`).then((res) => {
+    api.get(`/product/details/${id}`).then((res) => {
       setId(res.data.data.id);
       setNamaProduct(res.data.data.nama);
       setHargaProduct(res.data.data.harga);
@@ -58,7 +58,7 @@ function Product() {
   };
   const closehandlerFormUpdate = () => setShowModalFormUpdate(false);
   const handlerModalDetails = (id) => {
-    axios.get(`http://localhost:8000/product/details/${id}`).then((res) => {
+    api.get(`/product/details/${id}`).then((res) => {
       setDetailsProduct(res.data);
     });
     setShowModalDetails(true);
@@ -73,8 +73,8 @@ function Product() {
     productData.append("nama", namaProduct);
     productData.append("harga", hargaProduct);
 
-    axios
-      .post("http://localhost:8000/product/add", productData)
+    api
+      .post("/product/add", productData)
       .then((res) => {
         setShowModalForm(false);
         setFetchData(true);
@@ -97,8 +97,8 @@ function Product() {
     productData.append("nama", namaProduct);
     productData.append("harga", hargaProduct);
 
-    axios
-      .put(`http://localhost:8000/product/update/${id}`, productData)
+    api
+      .put(`/product/update/${id}`, productData)
       .then((res) => {
         setShowModalFormUpdate(false);
         setFetchData(true);
@@ -113,7 +113,7 @@ function Product() {
   const deleteHandler = (e, id) => {
     e.preventDefault();
 
-    axios.delete(`http://localhost:8000/product/delete/${id}`).then((res) => {
+    api.delete(`/product/delete/${id}`).then((res) => {
       setToastMessage(res.data.message);
       setFetchData(true);
       setShowToast(true);

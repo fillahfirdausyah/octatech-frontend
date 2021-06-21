@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import Moment from "react-moment";
-import axios from "axios";
+import api from '../../Helpers/api-endpoint'
 
 // Component
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
@@ -14,7 +14,7 @@ function Inbox() {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    axios.get("http://localhost:8000/pesan/all").then((res) => {
+    api.get("pesan/all").then((res) => {
       setAllPesan(res.data.data);
     });
   }, [fetchData]);
@@ -22,7 +22,7 @@ function Inbox() {
   const deleteHandler = (e, id) => {
     e.preventDefault();
 
-    axios.delete(`http://localhost:8000/pesan/delete/${id}`).then((res) => {
+    api.delete(`pesan/delete/${id}`).then((res) => {
       console.log(res.data);
       setFetchData(!fetchData);
     });
@@ -31,7 +31,7 @@ function Inbox() {
   const showHandler = (e, id) => {
     e.preventDefault();
 
-    axios.get(`http://localhost:8000/pesan/details/${id}`).then((res) => {
+    api.get(`/pesan/details/${id}`).then((res) => {
       setPesan(res.data.data);
     });
     setShowModal(true);
