@@ -76,7 +76,7 @@ function Navbar() {
             class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
             aria-labelledby="alertsDropdown"
           >
-            <h6 class="dropdown-header">Rizka </h6>
+            <h6 class="dropdown-header">Admin </h6>
             <a class="dropdown-item d-flex align-items-center" href="#">
               <div class="mr-3">
                 <div class="icon-circle bg-primary">
@@ -146,11 +146,11 @@ function Navbar() {
             aria-expanded="false"
           >
             <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-              Rizka
+              Admin
             </span>
             <img
               class="img-profile rounded-circle"
-              src="https://vignette.wikia.nocookie.net/kpop/images/9/99/WEEEKLY_Jihan_profile_photo.png/revision/latest?cb=20200511152408"
+              src="https://cdn1.iconfinder.com/data/icons/flat-business-icons/128/user-512.png"
             />
           </a>
           <div

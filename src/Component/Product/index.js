@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CurrencyFormat from "react-currency-format";
-import axios from "axios";
+import api from '../../Helpers/api-endpoint'
 
 // Asset
 import "./style.css";
@@ -17,7 +17,7 @@ function Product() {
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8000/product/all").then((res) => {
+    api.get("/product/all").then((res) => {
       setProduct(res.data.data);
     });
   }, []);
@@ -90,7 +90,7 @@ function Product() {
               <div className="card-product the-product">
                 <img
                   className="thub-product"
-                  src={`http://localhost:8000/image/product/${x.gambar}`}
+                  src={`https://api-octatech.herokuapp.com/image/product/${x.gambar}`}
                   alt=""
                 />
                 <h2>{x.nama}</h2>
