@@ -1,25 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 // Asset
 import "./style.css";
 import FiturSection from "../../Assets/fitur-section.png";
 import Line2 from "../../Assets/Line-2.svg";
-// import Fitur1 from '../../Assets/fitur-1.jpg'
-// import Fitur2 from '../../Assets/fitur-2.jpg'
-// import Fitur3 from '../../Assets/fitur-3.jpg'
-// import Fitur4 from '../../Assets/fitur-4.jpg'
-// import Fitur5 from '../../Assets/fitur-5.jpg'
 
 function Fitur() {
+  const [product, setProduct] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:8000/product/all").then((res) => {
+      setProduct(res.data.data);
+    });
+  }, []);
+
   return (
-    <div className="fitur"> 
+    <div className="fitur">
       <div className="row">
         <div className="col-md-12 col-xl-6 col-lg-6">
           <img src={FiturSection} className="img-fluid lekung" alt="" />
         </div>
-        <div className="col-md-12 col-xl-6 col-lg-6" data-aos="fade-up" data-aos-duration="1500">
+        <div
+          className="col-md-12 col-xl-6 col-lg-6"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+        >
           <div className="fitur-caption">
-            <img src={Line2} alt="" className="line2"/>
+            <img src={Line2} alt="" className="line2" />
             <h1>Pilihlah Fitur Modern Keinginanmu</h1>
             <p>
               Menemukan sistem lingkungan modern yang menghadirkan teknologi
@@ -27,13 +36,16 @@ function Fitur() {
               itu bersama agen kami.
             </p>
             <div className="list-fitur">
-              {/* <img src={Fitur1} alt="" />
-              <img src={Fitur2} alt="" />
-              <img src={Fitur3} alt="" />
-              <img src={Fitur4} alt="" />
-              <img src={Fitur5} alt="" /> */}
+              {product.map((x) => (
+                <img
+                  src={`http://localhost:8000/image/product/${x.gambar}`}
+                  alt=""
+                />
+              ))}
             </div>
-            <a href="/" className="btn btn-primary">Temukan Berbagai Fitur Pintar</a>
+            <NavLink className="btn btn-primary" to="/product">
+              Temukan Berbagai Fitur Pintar
+            </NavLink>
           </div>
         </div>
       </div>

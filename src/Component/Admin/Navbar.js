@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../Helpers/AuthContext";
 
@@ -6,13 +6,12 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
 function Navbar() {
+  const { setIsAuth } = useContext(AuthContext);
 
-  const {setIsAuth} = useContext(AuthContext)
-  
   const signOutHandler = (e) => {
     e.preventDefault();
-    localStorage.removeItem('token')
-    setIsAuth(false)
+    localStorage.removeItem("token");
+    setIsAuth(false);
   };
 
   return (
@@ -71,13 +70,13 @@ function Navbar() {
             aria-expanded="false"
           >
             <NotificationsIcon />
-            <span class="badge badge-danger badge-counter">3+</span>
+            {/* <span class="badge badge-danger badge-counter">3+</span> */}
           </a>
           <div
             class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
             aria-labelledby="alertsDropdown"
           >
-            <h6 class="dropdown-header">Alerts Center</h6>
+            <h6 class="dropdown-header">Rizka </h6>
             <a class="dropdown-item d-flex align-items-center" href="#">
               <div class="mr-3">
                 <div class="icon-circle bg-primary">
@@ -147,7 +146,7 @@ function Navbar() {
             aria-expanded="false"
           >
             <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-              Douglas McGee
+              Rizka
             </span>
             <img
               class="img-profile rounded-circle"

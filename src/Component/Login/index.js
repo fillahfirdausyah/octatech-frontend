@@ -13,12 +13,12 @@ function Login(props) {
   const [showToast, setShowToast] = useState(false);
   const [errMessage, setErrMessage] = useState("");
 
-  const {setIsAuth} = useContext(AuthContext)
+  const { setIsAuth } = useContext(AuthContext);
 
   const usernameRef = useRef();
   const passwordRef = useRef();
 
-  const history = useHistory()
+  const history = useHistory();
 
   const signInHandler = (e) => {
     e.preventDefault();
@@ -38,9 +38,9 @@ function Login(props) {
           setErrMessage(res.data.message);
         } else {
           localStorage.setItem("token", res.data.token);
-          setIsAuth(true)
+          setIsAuth(true);
 
-          history.replace('/admin')
+          history.replace("/admin");
         }
       })
       .catch((err) => console.log(err));
@@ -70,7 +70,7 @@ function Login(props) {
           </div>
           <div className="row">
             <div className="col-sm-12 col-md-12">
-              <form onSubmit={signInHandler}>
+              <form>
                 <div class="mb-4 mt-4">
                   <label for="username" class="form-label">
                     Username
@@ -95,7 +95,13 @@ function Login(props) {
                     placeholder="*****"
                   />
                 </div>
-                <button className="btn btn-primary w-100 mb-5">Sign In</button>
+                <button
+                  onClick={signInHandler}
+                  className="btn btn-primary w-100 mb-5"
+                  type="submit"
+                >
+                  Sign In
+                </button>
               </form>
             </div>
           </div>

@@ -19,7 +19,7 @@ function WhyUs() {
         </div>
         <div className="unggulan">
           <div className="row">
-            <div className="col-md-4 mt-4">
+            <div className="col-md-6  col-lg-4 mt-4">
               <div className="unggulan-card" data-aos="fade-up" data-aos-duration="700">
                 <img src="https://buildwithangga.com/themes/front/images/ic_studikasus.svg" alt="" />
                 <h5>Pilih Fiturmu</h5>
@@ -29,7 +29,7 @@ function WhyUs() {
                 </p>
               </div>
             </div>
-            <div className="col-md-4 mt-4">
+            <div className="col-md-6 mt-4 col-lg-4">
               <div className="unggulan-card" data-aos="fade-up" data-aos-duration="1000">
                 <img src="https://buildwithangga.com/themes/front/images/ic_konsultasi.svg" alt="" />
                 <h5>Nomor Kontak</h5>
@@ -39,7 +39,7 @@ function WhyUs() {
                 </p>
               </div>
             </div>
-            <div className="col-md-4 mt-4">
+            <div className="col-md-12 col-lg-4 mt-4">
               <div className="unggulan-card" data-aos="fade-up" data-aos-duration="1300">
                 <img src="https://buildwithangga.com/themes/front/images/ic_sertifikat.svg" alt="" />
                 <h5>Pembayaran yang Mudah dan Aman</h5>

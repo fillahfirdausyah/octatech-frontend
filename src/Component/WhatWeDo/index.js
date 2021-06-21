@@ -2,7 +2,7 @@ import React from "react";
 
 // Asset
 import "./style.css";
-import Video from '../../Assets/video/WeatherAPP.mp4'
+import Video from '../../Assets/video/octatech.mp4'
 
 function WhatWeDo() {
   return (

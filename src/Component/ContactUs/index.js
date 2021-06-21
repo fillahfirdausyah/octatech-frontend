@@ -94,6 +94,8 @@ function ContactUs() {
           onClose={() => setShowToast(false)}
           delay={2000}
           autohide
+          className="bg-success text-white"
+          style={{ position: 'absolute', right: 0 }}
         >
           <Toast.Header>
             <img
@@ -103,7 +105,7 @@ function ContactUs() {
             />
             <strong className="me-auto">Message</strong>
           </Toast.Header>
-          <Toast.Body>{message}</Toast.Body>
+          <Toast.Body>{`${message} mengirimkan pesan`}</Toast.Body>
         </Toast>
         <h1>Kirim Pesan</h1>
         <div className="row" data-aos="fade-up" data-aos-duration="900">

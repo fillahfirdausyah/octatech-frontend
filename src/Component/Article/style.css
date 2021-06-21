@@ -90,6 +90,12 @@
 
 @media (max-width: 991.98px) {
   .right-child img {
-    /* margin-left: auto; */
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .right-child img {
+    margin-left: auto;
   }
 }
