@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import { Toast } from "react-bootstrap";
-import axios from "axios";
+import { Toast, Spinner } from "react-bootstrap";
+import api from "../../Helpers/api-endpoint";
 
 // Asset
 import "./style.css";
@@ -11,6 +11,7 @@ import PhoneIcon from "@material-ui/icons/Phone";
 function ContactUs() {
   const [showToast, setShowToast] = useState(false);
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const firstNameRef = useRef();
   const lastNameRef = useRef();
@@ -19,6 +20,8 @@ function ContactUs() {
 
   const submitHandler = (e) => {
     e.preventDefault();
+
+    setLoading(true);
 
     const firstName = firstNameRef.current.value;
     const lastName = lastNameRef.current.value;
@@ -33,9 +36,10 @@ function ContactUs() {
       pesan,
     };
 
-    axios.post("http://localhost:8000/pesan/add", data).then((res) => {
+    api.post("/pesan/add", data).then((res) => {
       setMessage(res.data.message);
       setShowToast(true);
+      setLoading(false);
     });
 
     e.target.reset();
@@ -95,7 +99,7 @@ function ContactUs() {
           delay={2000}
           autohide
           className="bg-success text-white"
-          style={{ position: 'absolute', right: 0 }}
+          style={{ position: "absolute", right: 0 }}
         >
           <Toast.Header>
             <img
@@ -154,7 +158,20 @@ function ContactUs() {
                   ref={pesanRef}
                 ></textarea>
               </div>
-              <button className="btn btn-primary w-100">Kirim Pesan</button>
+              {!loading ? (
+                <button className="btn btn-primary w-100">Kirim Pesan</button>
+              ) : (
+                <button className="btn btn-primary w-100">
+                  <Spinner
+                    as="span"
+                    animation="grow"
+                    size="sm"
+                    role="status"
+                    aria-hidden="true"
+                  />
+                  Loading...
+                </button>
+              )}
             </form>
           </div>
         </div>

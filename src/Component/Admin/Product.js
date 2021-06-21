@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import CurrencyFormat from "react-currency-format";
-import { Modal, Button, Toast } from "react-bootstrap";
+import { Modal, Button, Toast, Spinner } from "react-bootstrap";
 import api from "../../Helpers/api-endpoint";
 
 // Component
@@ -10,6 +10,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 
 function Product() {
+  const [loading, setLoading] = useState(false);
   const [product, setProduct] = useState([]);
   const [detailsProduct, setDetailsProduct] = useState({
     data: {
@@ -58,7 +59,7 @@ function Product() {
       setId(res.data.data.id);
       setNamaProduct(res.data.data.nama);
       setHargaProduct(res.data.data.harga);
-      setDeskripsi(res.data.data.deskripsi)
+      setDeskripsi(res.data.data.deskripsi);
     });
     setShowModalFormUpdate(true);
   };
@@ -75,6 +76,8 @@ function Product() {
   const formProductHandler = (e) => {
     e.preventDefault();
 
+    setLoading(true);
+
     let productData = new FormData();
     productData.append("gambar", gambar);
     productData.append("nama", namaProduct);
@@ -88,17 +91,21 @@ function Product() {
         setFetchData(true);
         setToastMessage(res.data.message);
         setShowToast(true);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
       });
 
     e.target.reset();
+    setDeskripsi('')
     setFetchData(false);
   };
 
   const updateProductHandler = (e) => {
     e.preventDefault();
+
+    setLoading(true);
 
     let productData = new FormData();
     productData.append("gambar", gambar);
@@ -111,6 +118,7 @@ function Product() {
       setFetchData(true);
       setToastMessage(res.data.message);
       setShowToast(true);
+      setLoading(false);
     });
 
     e.target.reset();
@@ -120,10 +128,13 @@ function Product() {
   const deleteHandler = (e, id) => {
     e.preventDefault();
 
+    setLoading(true)
+
     api.delete(`/product/delete/${id}`).then((res) => {
       setToastMessage(res.data.message);
       setFetchData(true);
       setShowToast(true);
+      setLoading(false)
     });
 
     setFetchData(false);
@@ -195,6 +206,7 @@ function Product() {
                   </label>
                   <input
                     type="file"
+                    required
                     class="form-control"
                     id="nama"
                     placeholder="Nama"
@@ -204,9 +216,22 @@ function Product() {
                 </div>
               </div>
             </div>
-            <button className="btn btn-primary w-100 mb-2">
-              Tambahkan Product
-            </button>
+            {!loading ? (
+              <button className="btn btn-primary w-100 mb-2" type="submit">
+                Tambahkan Product
+              </button>
+            ) : (
+              <button className="btn btn-primary w-100 mb-2" type="submit">
+                <Spinner
+                  as="span"
+                  animation="grow"
+                  size="sm"
+                  role="status"
+                  aria-hidden="true"
+                />
+                Loading...
+              </button>
+            )}
           </form>
         </Modal.Body>
         <Modal.Footer>
@@ -284,6 +309,7 @@ function Product() {
                   </label>
                   <input
                     type="file"
+                    required
                     class="form-control"
                     id="nama"
                     placeholder="Nama"
@@ -292,9 +318,22 @@ function Product() {
                 </div>
               </div>
             </div>
-            <button className="btn btn-primary w-100 mb-2">
-              Update Product
-            </button>
+            {!loading ? (
+              <button className="btn btn-primary w-100 mb-2" type="submit">
+                Update Product
+              </button>
+            ) : (
+              <button className="btn btn-primary w-100 mb-2" type="submit">
+                <Spinner
+                  as="span"
+                  animation="grow"
+                  size="sm"
+                  role="status"
+                  aria-hidden="true"
+                />
+                Loading...
+              </button>
+            )}
           </form>
         </Modal.Body>
         <Modal.Footer>
@@ -320,7 +359,7 @@ function Product() {
           <div className="card-product the-product">
             <img
               className="thub-product"
-              src={`http://localhost:8000/image/product/${detailsProduct.data.gambar}`}
+              src={`https://api-octatech.herokuapp.com//image/product/${detailsProduct.data.gambar}`}
               alt=""
             />
             <h2>{detailsProduct.data.nama}</h2>
@@ -395,12 +434,27 @@ function Product() {
                       />
                     </td>
                     <td>
-                      <button
-                        className="btn btn-danger btn-action mx-2"
-                        onClick={(e) => deleteHandler(e, x.id)}
-                      >
-                        <DeleteForeverIcon className="action-icon" />
-                      </button>
+                      {!loading ? (
+                        <button
+                          className="btn btn-danger btn-action mx-2"
+                          onClick={(e) => deleteHandler(e, x.id)}
+                        >
+                          <DeleteForeverIcon className="action-icon" />
+                        </button>
+                      ) : (
+                        <button
+                          className="btn btn-danger btn-action mx-2"
+                          onClick={(e) => deleteHandler(e, x.id)}
+                        >
+                          <Spinner
+                            as="span"
+                            animation="border"
+                            size="sm"
+                            role="status"
+                            aria-hidden="true"
+                          />
+                        </button>
+                      )}
                       <button
                         className="btn btn-success btn-action mx-2"
                         onClick={() => handleModalFormUpdate(x.id)}

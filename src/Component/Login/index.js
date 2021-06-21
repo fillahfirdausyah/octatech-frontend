@@ -1,7 +1,7 @@
 import React, { useState, useRef, useContext } from "react";
 import { useHistory } from "react-router";
-import axios from "axios";
-import { Toast } from "react-bootstrap";
+import api from "../../Helpers/api-endpoint";
+import { Toast, Spinner } from "react-bootstrap";
 
 import { AuthContext } from "../../Helpers/AuthContext";
 
@@ -12,6 +12,7 @@ import PersonIcon from "@material-ui/icons/Person";
 function Login(props) {
   const [showToast, setShowToast] = useState(false);
   const [errMessage, setErrMessage] = useState("");
+  const [loading, setLaoding] = useState(false);
 
   const { setIsAuth } = useContext(AuthContext);
 
@@ -22,6 +23,7 @@ function Login(props) {
 
   const signInHandler = (e) => {
     e.preventDefault();
+    setLaoding(true);
     const user = usernameRef.current.value;
     const pass = passwordRef.current.value;
 
@@ -30,12 +32,13 @@ function Login(props) {
       password: pass,
     };
 
-    axios
-      .post("http://localhost:8000/user/login", newData)
+    api
+      .post("/user/login", newData)
       .then((res) => {
         if (res.data.code === "404" || res.data.code === "204") {
           setShowToast(true);
           setErrMessage(res.data.message);
+          setLaoding(false)
         } else {
           localStorage.setItem("token", res.data.token);
           setIsAuth(true);
@@ -95,13 +98,30 @@ function Login(props) {
                     placeholder="*****"
                   />
                 </div>
-                <button
-                  onClick={signInHandler}
-                  className="btn btn-primary w-100 mb-5"
-                  type="submit"
-                >
-                  Sign In
-                </button>
+                {!loading ? (
+                  <button
+                    onClick={signInHandler}
+                    className="btn btn-primary w-100 mb-5"
+                    type="submit"
+                  >
+                    Sign In
+                  </button>
+                ) : (
+                  <button
+                    onClick={signInHandler}
+                    className="btn btn-primary w-100 mb-5"
+                    type="submit"
+                  >
+                    <Spinner
+                      as="span"
+                      animation="grow"
+                      size="sm"
+                      role="status"
+                      aria-hidden="true"
+                    />
+                    Loading...
+                  </button>
+                )}
               </form>
             </div>
           </div>
