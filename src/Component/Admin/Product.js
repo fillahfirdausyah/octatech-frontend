@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import CurrencyFormat from "react-currency-format";
 import { Modal, Button, Toast } from "react-bootstrap";
-import api from '../../Helpers/api-endpoint'
+import api from "../../Helpers/api-endpoint";
 
 // Component
 import VisibilityIcon from "@material-ui/icons/Visibility";
@@ -40,6 +40,11 @@ function Product() {
     setgambar(e.target.files[0]);
   };
 
+  const [deskripsi, setDeskripsi] = useState("");
+  const deskripsiHandler = (e) => {
+    setDeskripsi(e.target.value);
+  };
+
   useEffect(() => {
     api.get("/product/all").then((res) => {
       setProduct(res.data.data);
@@ -53,10 +58,12 @@ function Product() {
       setId(res.data.data.id);
       setNamaProduct(res.data.data.nama);
       setHargaProduct(res.data.data.harga);
+      setDeskripsi(res.data.data.deskripsi)
     });
     setShowModalFormUpdate(true);
   };
   const closehandlerFormUpdate = () => setShowModalFormUpdate(false);
+
   const handlerModalDetails = (id) => {
     api.get(`/product/details/${id}`).then((res) => {
       setDetailsProduct(res.data);
@@ -72,6 +79,7 @@ function Product() {
     productData.append("gambar", gambar);
     productData.append("nama", namaProduct);
     productData.append("harga", hargaProduct);
+    productData.append("deskripsi", deskripsi);
 
     api
       .post("/product/add", productData)
@@ -96,15 +104,14 @@ function Product() {
     productData.append("gambar", gambar);
     productData.append("nama", namaProduct);
     productData.append("harga", hargaProduct);
+    productData.append("deskripsi", deskripsi);
 
-    api
-      .put(`/product/update/${id}`, productData)
-      .then((res) => {
-        setShowModalFormUpdate(false);
-        setFetchData(true);
-        setToastMessage(res.data.message);
-        setShowToast(true);
-      });
+    api.put(`/product/update/${id}`, productData).then((res) => {
+      setShowModalFormUpdate(false);
+      setFetchData(true);
+      setToastMessage(res.data.message);
+      setShowToast(true);
+    });
 
     e.target.reset();
     setFetchData(false);
@@ -165,6 +172,20 @@ function Product() {
                     placeholder="Rp..."
                     onChange={hargaProductHandler}
                   />
+                </div>
+              </div>
+              <div className="col">
+                <div class="mb-4">
+                  <label for="nama" class="form-label">
+                    Deskripsi
+                  </label>
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                    value={deskripsi}
+                    onChange={deskripsiHandler}
+                  ></textarea>
                 </div>
               </div>
               <div className="col-12">
@@ -242,6 +263,20 @@ function Product() {
                   />
                 </div>
               </div>
+              <div className="col">
+                <div class="mb-4">
+                  <label for="nama" class="form-label">
+                    Deskripsi
+                  </label>
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                    value={deskripsi}
+                    onChange={deskripsiHandler}
+                  ></textarea>
+                </div>
+              </div>
               <div className="col-12">
                 <div class="mb-4">
                   <label for="nama" class="form-label">
@@ -297,6 +332,8 @@ function Product() {
                 prefix={"-Rp."}
               />
             </p>
+            <hr />
+            <p style={{ color: "black" }}>{detailsProduct.data.deskripsi}</p>
           </div>
         </Modal.Body>
         <Modal.Footer>

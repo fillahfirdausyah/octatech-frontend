@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import Moment from "react-moment";
-import api from '../../Helpers/api-endpoint'
+import api from "../../Helpers/api-endpoint";
 
 // Component
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
@@ -52,15 +52,17 @@ function Inbox() {
         </Modal.Header>
         <Modal.Body>
           <div className="row">
-            <div className="col">
+            <div className="col-6">
               <h5>{pesan.name}</h5>
+              <p className="pesan-email">{pesan.email}</p>
             </div>
-            <div className="col">
+            <div className="col-6">
               <p className="pesan-waktu">
                 <Moment fromNow>{pesan.createdAt}</Moment>
               </p>
             </div>
           </div>
+          <hr />
           <p className="mt-4">{pesan.pesan}</p>
         </Modal.Body>
         <Modal.Footer>

@@ -10,6 +10,12 @@
     font-size: 15px;
 }
 
+.pesan-modal p.pesan-email {
+    font-weight: 300;
+    color: gray;
+    font-size: 12px;
+}
+
 .pesan-modal p.pesan-waktu {
     font-weight: 300;
     color: gray;

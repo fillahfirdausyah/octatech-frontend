@@ -1,12 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { Modal, Button } from "react-bootstrap";
+import api from "../../Helpers/api-endpoint";
 
 // Component
-import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import EditIcon from "@material-ui/icons/Edit";
 
 function Slider() {
   const [showModalForm, setShowModal] = useState(false);
+  const [slider, setSlider] = useState();
+
+  const sliderHandler = (e) => {
+    e.preventDefault();
+
+    let newSlider = new FormData()
+
+    slider.forEach(x => {
+        newSlider.append('slider', x)
+    })
+
+    api.get("/slider/add", newSlider).then((res) => {
+      alert(res);
+    });
+    console.log(slider)
+  };
+
+  const gambarSliderHandler = (e) => {
+    setSlider(e.target.files);
+  };
 
   const openModalForm = () => setShowModal(true);
   const closeModalForm = () => setShowModal(false);
@@ -25,45 +45,19 @@ function Slider() {
           <Modal.Title>Edit Slider</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form>
+          <form onSubmit={sliderHandler}>
             <div className="row">
-              <div className="col-6">
-                <div class="mb-4">
-                  <label for="nama" class="form-label">
-                    Nama Product
-                  </label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="nama"
-                    placeholder="Nama"
-                  />
-                </div>
-              </div>
-              <div className="col-6">
-                <div class="mb-3">
-                  <label for="harga" class="form-label">
-                    Harga Product
-                  </label>
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="harga"
-                    placeholder="Rp..."
-                  />
-                </div>
-              </div>
               <div className="col-12">
                 <div class="mb-4">
                   <label for="nama" class="form-label">
-                    Gambar Product
+                    Gambar Slider
                   </label>
                   <input
                     type="file"
                     class="form-control"
                     id="nama"
                     placeholder="Nama"
-                    // ref={gambarProductRef}
+                    onChange={gambarSliderHandler}
                     multiple
                   />
                 </div>

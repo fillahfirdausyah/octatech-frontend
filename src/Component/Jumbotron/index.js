@@ -32,21 +32,21 @@ function Jumbotron() {
             <Carousel.Item className="slider-img">
               <img
                 className="w-100"
-                src="https://dbkpop.com/wp-content/uploads/2020/06/weeekly_we_are_teaser_2_shin_Jiyoon.jpg"
+                src="https://techprorepair.com/wp-content/uploads/2020/05/Home-Automation.jpg"
                 alt="First slide"
               />
             </Carousel.Item>
             <Carousel.Item className="slider-img">
               <img
                 className="w-100"
-                src="https://image.kpopmap.com/2020/10/weeekly-zig-zag.jpg"
+                src="https://myventurepad.com/wp-content/uploads/2017/06/smarthome1.jpg"
                 alt="Second slide"
               />
             </Carousel.Item>
             <Carousel.Item className="slider-img">
               <img
                 className="w-100"
-                src="https://thumbnails.kpopmap.com/2020/06/weeekly-lee-soojin-cover-680x384.jpg"
+                src="https://www.telitec.com/wp-content/uploads/2016/08/smarthomes.png"
                 alt="Third slide"
               />
             </Carousel.Item>
