@@ -1,27 +1,45 @@
 .btn.btn-action {
-    width: 40px !important;
-    height: 40px;
-    border-radius: 50% !important;
-    /* border-radius: 90px !important; */
+  width: 40px !important;
+  height: 40px;
+  border-radius: 50% !important;
+  /* border-radius: 90px !important; */
 }
 
 .pesan-modal h5 {
-    font-weight: 500;
-    font-size: 15px;
+  font-weight: 500;
+  font-size: 15px;
 }
 
 .pesan-modal p.pesan-email {
-    font-weight: 300;
-    color: gray;
-    font-size: 12px;
+  font-weight: 300;
+  color: gray;
+  font-size: 12px;
 }
 
 .pesan-modal p.pesan-waktu {
-    font-weight: 300;
-    color: gray;
+  font-weight: 300;
+  color: gray;
 }
 
 .action-icon {
-    position: relative;
-    right: 5px;
+  position: relative;
+  right: 5px;
+}
+
+.nav-link.active {
+    color: rgb(0, 0, 0) !important;
+}
+
+@media (max-width: 575.98px) {
+  .td-btn-action {
+    display: flex;
+    align-items: center;
+    margin-top: 7px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .td-btn-action {
+    display: flex;
+  }
 }

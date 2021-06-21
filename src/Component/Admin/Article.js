@@ -40,7 +40,7 @@ function Article() {
                   <td>Donna Snider</td>
                   <td>Customer Support</td>
                   <td>New York</td>
-                  <td>
+                  <td className="td-btn-action">
                     <a href="" className="btn btn-danger btn-action mx-2">
                       <DeleteForeverIcon className="action-icon" />
                     </a>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, Spinner } from "react-bootstrap";
 import Moment from "react-moment";
 import api from "../../Helpers/api-endpoint";
 
@@ -12,6 +12,7 @@ function Inbox() {
   const [pesan, setPesan] = useState({});
   const [fetchData, setFetchData] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     api.get("pesan/all").then((res) => {
@@ -21,11 +22,14 @@ function Inbox() {
 
   const deleteHandler = (e, id) => {
     e.preventDefault();
+    setLoading(true)
 
     api.delete(`pesan/delete/${id}`).then((res) => {
       console.log(res.data);
       setFetchData(!fetchData);
+      setLoading(false)
     });
+
   };
 
   const showHandler = (e, id) => {
@@ -109,13 +113,28 @@ function Inbox() {
                       <td>{index + 1}</td>
                       <td>{x.name}</td>
                       <td>{x.email}</td>
-                      <td>
-                        <button
-                          className="btn btn-danger btn-action mx-2"
-                          onClick={(e) => deleteHandler(e, x.id)}
-                        >
-                          <DeleteForeverIcon className="action-icon" />
-                        </button>
+                      <td className="td-btn-action">
+                        {!loading ? (
+                          <button
+                            className="btn btn-danger btn-action mx-2"
+                            onClick={(e) => deleteHandler(e, x.id)}
+                          >
+                            <DeleteForeverIcon className="action-icon" />
+                          </button>
+                        ) : (
+                          <button
+                            className="btn btn-danger btn-action mx-2"
+                            onClick={(e) => deleteHandler(e, x.id)}
+                          >
+                            <Spinner
+                              as="span"
+                              animation="border"
+                              size="sm"
+                              role="status"
+                              aria-hidden="true"
+                            />
+                          </button>
+                        )}
                         <button
                           className="btn btn-info btn-action"
                           onClick={(e) => showHandler(e, x.id)}

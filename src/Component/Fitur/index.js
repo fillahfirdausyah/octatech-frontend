@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import api from '../../Helpers/api-endpoint'
 import { NavLink } from "react-router-dom";
 
 // Asset
@@ -11,7 +11,7 @@ function Fitur() {
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8000/product/all").then((res) => {
+    api.get("/product/all").then((res) => {
       setProduct(res.data.data);
     });
   }, []);
@@ -38,7 +38,7 @@ function Fitur() {
             <div className="list-fitur">
               {product.map((x) => (
                 <img
-                  src={`http://localhost:8000/image/product/${x.gambar}`}
+                  src={`https://api-octatech.herokuapp.com/image/product/${x.gambar}`}
                   alt=""
                 />
               ))}

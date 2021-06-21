@@ -84,8 +84,7 @@ function Product() {
     productData.append("harga", hargaProduct);
     productData.append("deskripsi", deskripsi);
 
-    api
-      .post("/product/add", productData)
+    api.post("/product/add", productData)
       .then((res) => {
         setShowModalForm(false);
         setFetchData(true);
@@ -396,12 +395,12 @@ function Product() {
         <Toast.Body>{toastMessage}</Toast.Body>
       </Toast>
       <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Artikel</h1>
+        <h1 class="h3 mb-0 text-gray-800">Product</h1>
       </div>
 
       <div class="card shadow mb-4" data-aos="fade-up" data-aos-duration="500">
         <div class="card-header py-3 d-flex align-items-center justify-content-between">
-          <h6 class="m-0 font-weight-bold text-primary">Data Artikel</h6>
+          <h6 class="m-0 font-weight-bold text-primary">Data Product</h6>
           <button
             className="btn btn-primary btn-action ml-5"
             onClick={handleModalForm}
@@ -433,7 +432,7 @@ function Product() {
                         prefix={"-Rp."}
                       />
                     </td>
-                    <td>
+                    <td className="td-btn-action">
                       {!loading ? (
                         <button
                           className="btn btn-danger btn-action mx-2"
