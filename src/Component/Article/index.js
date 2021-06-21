@@ -7,7 +7,7 @@ import Article1 from "../../Assets/article-1.jpg";
 import Article2 from "../../Assets/article-2.jpg";
 import Article3 from "../../Assets/article-3.jpg";
 import Article4 from "../../Assets/article-4.jpg";
-import Article5 from "../../Assets/fitur-5.jpg";
+import Article5 from "../../Assets/article-2.jpg";
 
 function Article() {
   return (
