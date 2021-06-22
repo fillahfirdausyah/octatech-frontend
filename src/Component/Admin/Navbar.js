@@ -6,7 +6,7 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
 function Navbar() {
-  const { setIsAuth } = useContext(AuthContext);
+  const { setIsAuth } = useContext(AuthContext); 
 
   const signOutHandler = (e) => {
     e.preventDefault();

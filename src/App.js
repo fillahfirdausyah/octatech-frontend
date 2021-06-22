@@ -16,6 +16,7 @@ import GalleryPage from "./Page/GalleryPage";
 import LoginPage from "./Page/LoginPage";
 import AdminProductPage from "./Page/AdminProductPage";
 import SlidersPage from "./Page/SlidersPage";
+import AdminContactPage from "./Page/AdminContactPage";
 
 import ProtectedRoute from "./Component/ProtectedRoute";
 import { AuthContext } from "./Helpers/AuthContext";
@@ -64,6 +65,9 @@ function App() {
           </Route>
           <Route path="/sliders">
             {isAuth ? <SlidersPage /> : <Redirect to="/login" />}
+          </Route>
+          <Route path="/contacts">
+            {isAuth ? <AdminContactPage /> : <Redirect to="/login" />}
           </Route>
           <Route path="/gallery">
             <GalleryPage />

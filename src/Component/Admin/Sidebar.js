@@ -6,7 +6,8 @@ import DraftsIcon from "@material-ui/icons/Drafts";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import LocalMallIcon from "@material-ui/icons/LocalMall";
-import TuneIcon from '@material-ui/icons/Tune';
+import TuneIcon from "@material-ui/icons/Tune";
+import ContactsIcon from "@material-ui/icons/Contacts";
 
 function Sidebar() {
   return (
@@ -69,6 +70,12 @@ function Sidebar() {
         <NavLink className="nav-link" to="/sliders">
           <TuneIcon className="mx-2" />
           <span>Gambar Slider</span>
+        </NavLink>
+      </li>
+      <li class="nav-item">
+        <NavLink className="nav-link" to="/contacts">
+          <ContactsIcon className="mx-2" />
+          <span>Kontak</span>
         </NavLink>
       </li>
     </ul>
