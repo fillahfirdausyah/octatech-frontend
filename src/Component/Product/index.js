@@ -99,7 +99,7 @@ function Product() {
                     value={x.harga}
                     displayType={"text"}
                     thousandSeparator={true}
-                    prefix={"-Rp."}
+                    prefix={"Rp."}
                   />
                 </p>
                 <div className="rating">

@@ -114,10 +114,11 @@ function Login(props) {
                   >
                     <Spinner
                       as="span"
-                      animation="grow"
+                      animation="border"
                       size="sm"
                       role="status"
                       aria-hidden="true"
+                      className="mr-2"
                     />
                     Loading...
                   </button>

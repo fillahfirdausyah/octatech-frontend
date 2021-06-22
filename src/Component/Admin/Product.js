@@ -84,7 +84,8 @@ function Product() {
     productData.append("harga", hargaProduct);
     productData.append("deskripsi", deskripsi);
 
-    api.post("/product/add", productData)
+    api
+      .post("/product/add", productData)
       .then((res) => {
         setShowModalForm(false);
         setFetchData(true);
@@ -97,7 +98,7 @@ function Product() {
       });
 
     e.target.reset();
-    setDeskripsi('')
+    setDeskripsi("");
     setFetchData(false);
   };
 
@@ -127,13 +128,13 @@ function Product() {
   const deleteHandler = (e, id) => {
     e.preventDefault();
 
-    setLoading(true)
+    setLoading(true);
 
     api.delete(`/product/delete/${id}`).then((res) => {
       setToastMessage(res.data.message);
       setFetchData(true);
       setShowToast(true);
-      setLoading(false)
+      setLoading(false);
     });
 
     setFetchData(false);
@@ -155,66 +156,133 @@ function Product() {
         </Modal.Header>
         <Modal.Body>
           <form onSubmit={formProductHandler}>
-            <div className="row">
-              <div className="col-6">
-                <div class="mb-4">
-                  <label for="nama" class="form-label">
-                    Nama Product
-                  </label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="nama"
-                    placeholder="Nama"
-                    onChange={namaProductHandler}
-                  />
+            {!loading ? (
+              <div className="row">
+                <div className="col-6">
+                  <div class="mb-4">
+                    <label for="nama" class="form-label">
+                      Nama Product
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="nama"
+                      placeholder="Nama"
+                      onChange={namaProductHandler}
+                    />
+                  </div>
+                </div>
+                <div className="col-6">
+                  <div class="mb-3">
+                    <label for="harga" class="form-label">
+                      Harga Product
+                    </label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="harga"
+                      placeholder="Rp..."
+                      onChange={hargaProductHandler}
+                    />
+                  </div>
+                </div>
+                <div className="col">
+                  <div class="mb-4">
+                    <label for="nama" class="form-label">
+                      Deskripsi
+                    </label>
+                    <textarea
+                      class="form-control"
+                      id="exampleFormControlTextarea1"
+                      rows="3"
+                      value={deskripsi}
+                      onChange={deskripsiHandler}
+                    ></textarea>
+                  </div>
+                </div>
+                <div className="col-12">
+                  <div class="mb-4">
+                    <label for="nama" class="form-label">
+                      Gambar Product
+                    </label>
+                    <input
+                      type="file"
+                      required
+                      class="form-control"
+                      id="nama"
+                      placeholder="Nama"
+                      // ref={gambarProductRef}
+                      onChange={gambarHanlder}
+                    />
+                  </div>
                 </div>
               </div>
-              <div className="col-6">
-                <div class="mb-3">
-                  <label for="harga" class="form-label">
-                    Harga Product
-                  </label>
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="harga"
-                    placeholder="Rp..."
-                    onChange={hargaProductHandler}
-                  />
+            ) : (
+              <div className="row">
+                <div className="col-6">
+                  <div class="mb-4">
+                    <label for="nama" class="form-label">
+                      Nama Product
+                    </label>
+                    <input
+                      disabled
+                      type="text"
+                      class="form-control"
+                      id="nama"
+                      placeholder="Nama"
+                      onChange={namaProductHandler}
+                    />
+                  </div>
+                </div>
+                <div className="col-6">
+                  <div class="mb-3">
+                    <label for="harga" class="form-label">
+                      Harga Product
+                    </label>
+                    <input
+                      disabled
+                      type="number"
+                      class="form-control"
+                      id="harga"
+                      placeholder="Rp..."
+                      onChange={hargaProductHandler}
+                    />
+                  </div>
+                </div>
+                <div className="col">
+                  <div class="mb-4">
+                    <label for="nama" class="form-label">
+                      Deskripsi
+                    </label>
+                    <textarea
+                      class="form-control"
+                      id="exampleFormControlTextarea1"
+                      rows="3"
+                      value={deskripsi}
+                      onChange={deskripsiHandler}
+                      disabled
+                    ></textarea>
+                  </div>
+                </div>
+                <div className="col-12">
+                  <div class="mb-4">
+                    <label for="nama" class="form-label">
+                      Gambar Product
+                    </label>
+                    <input
+                      disabled
+                      type="file"
+                      required
+                      class="form-control"
+                      id="nama"
+                      placeholder="Nama"
+                      // ref={gambarProductRef}
+                      onChange={gambarHanlder}
+                    />
+                  </div>
                 </div>
               </div>
-              <div className="col">
-                <div class="mb-4">
-                  <label for="nama" class="form-label">
-                    Deskripsi
-                  </label>
-                  <textarea
-                    class="form-control"
-                    id="exampleFormControlTextarea1"
-                    rows="3"
-                    value={deskripsi}
-                    onChange={deskripsiHandler}
-                  ></textarea>
-                </div>
-              </div>
-              <div className="col-12">
-                <div class="mb-4">
-                  <label for="nama" class="form-label">
-                    Gambar Product
-                  </label>
-                  <input
-                    type="file"
-                    required
-                    class="form-control"
-                    id="nama"
-                    placeholder="Nama"
-                    // ref={gambarProductRef}
-                    onChange={gambarHanlder}
-                  />
-                </div>
-              </div>
-            </div>
+            )}
             {!loading ? (
               <button className="btn btn-primary w-100 mb-2" type="submit">
                 Tambahkan Product
@@ -222,8 +290,9 @@ function Product() {
             ) : (
               <button className="btn btn-primary w-100 mb-2" type="submit">
                 <Spinner
+                  className="mr-2"
                   as="span"
-                  animation="grow"
+                  animation="border"
                   size="sm"
                   role="status"
                   aria-hidden="true"
@@ -324,8 +393,9 @@ function Product() {
             ) : (
               <button className="btn btn-primary w-100 mb-2" type="submit">
                 <Spinner
+                  className="mr-2"
                   as="span"
-                  animation="grow"
+                  animation="border"
                   size="sm"
                   role="status"
                   aria-hidden="true"
@@ -358,7 +428,7 @@ function Product() {
           <div className="card-product the-product">
             <img
               className="thub-product"
-              src={`https://api-octatech.herokuapp.com//image/product/${detailsProduct.data.gambar}`}
+              src={`https://api-octatech.herokuapp.com/image/product/${detailsProduct.data.gambar}`}
               alt=""
             />
             <h2>{detailsProduct.data.nama}</h2>
@@ -367,7 +437,7 @@ function Product() {
                 value={detailsProduct.data.harga}
                 displayType={"text"}
                 thousandSeparator={true}
-                prefix={"-Rp."}
+                prefix={"Rp."}
               />
             </p>
             <hr />
@@ -429,7 +499,7 @@ function Product() {
                         value={x.harga}
                         displayType={"text"}
                         thousandSeparator={true}
-                        prefix={"-Rp."}
+                        prefix={"Rp."}
                       />
                     </td>
                     <td className="td-btn-action">
@@ -446,6 +516,7 @@ function Product() {
                           onClick={(e) => deleteHandler(e, x.id)}
                         >
                           <Spinner
+                            className="mr-2"
                             as="span"
                             animation="border"
                             size="sm"

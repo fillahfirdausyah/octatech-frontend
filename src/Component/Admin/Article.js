@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
+import { Toast } from "react-bootstrap";
 
 // Component
 import VisibilityIcon from "@material-ui/icons/Visibility";
@@ -6,8 +7,32 @@ import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import EditIcon from "@material-ui/icons/Edit";
 
 function Article() {
+
+  const [notify, setNotify] = useState(false)
+
+  const notifyHandler = (e) => {
+    e.preventDefault();
+    
+    setNotify(true)
+  }
+
   return (
     <>
+      <Toast
+        show={notify}
+        onClose={() => setNotify(false)}
+        delay={2000}
+        autohide
+        className="bg-warning text-white"
+        style={{ position: "absolute", right: 0, zIndex: 1 }}
+      >
+        <Toast.Header>
+          <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
+          <strong className="me-auto">Message</strong>
+        </Toast.Header>
+        <Toast.Body>Dalam Tahap Maintanance</Toast.Body>
+      </Toast>
+
       <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Artikel</h1>
       </div>
@@ -27,29 +52,21 @@ function Article() {
                   <th>Action</th>
                 </tr>
               </thead>
-              {/* <tfoot>
-                <tr>
-                <th>Judul</th>
-                  <th>Tanggal</th>
-                  <th>Office</th>
-                  <th>Action</th>
-                </tr>
-              </tfoot> */}
               <tbody>
                 <tr>
                   <td>Donna Snider</td>
                   <td>Customer Support</td>
                   <td>New York</td>
                   <td className="td-btn-action">
-                    <a href="" className="btn btn-danger btn-action mx-2">
+                    <button onClick={notifyHandler} className="btn btn-danger btn-action mx-2">
                       <DeleteForeverIcon className="action-icon" />
-                    </a>
-                    <a href="" className="btn btn-success btn-action mx-2">
+                    </button>
+                    <button onClick={notifyHandler} className="btn btn-success btn-action mx-2">
                       <EditIcon className="action-icon" />
-                    </a>
-                    <a href="" className="btn btn-info btn-action">
+                    </button>
+                    <button onClick={notifyHandler} className="btn btn-info btn-action">
                       <VisibilityIcon className="action-icon" />
-                    </a>
+                    </button>
                   </td>
                 </tr>
               </tbody>
